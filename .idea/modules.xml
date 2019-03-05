@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/shen.shen.iml" filepath="$PROJECT_DIR$/.idea/modules/shen.shen.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/shen.shen.main.iml" filepath="$PROJECT_DIR$/.idea/modules/shen.shen.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/shen.shen.test.iml" filepath="$PROJECT_DIR$/.idea/modules/shen.shen.test.iml" />
+    </modules>
+  </component>
+</project>
