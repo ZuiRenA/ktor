@@ -1,0 +1,7 @@
+GET {{host}}/snippets
+Content-Type: application/json
+Authorization: Bearer {{auth_token}}
+
+{"snippet": {"user": "Hello word JWT", "text": "true"}}
+
+###

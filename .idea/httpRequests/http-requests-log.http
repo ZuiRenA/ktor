@@ -1,0 +1,197 @@
+POST http://127.0.0.1:8080/login-register
+Content-Type: application/json
+
+{"user": "test", "password": "invalid-password"}
+
+<> 2019-03-07T121620.401.json
+
+###
+
+GET http://127.0.0.1:8080/snippets
+Content-Type: application/json
+Authorization: Bearer [object Object]
+
+{"snippet": {"user": "Hello word JWT", "text": "true"}}
+
+<> 2019-03-07T121554.200.json
+
+###
+
+GET http://127.0.0.1:8080/snippets
+Content-Type: application/json
+Authorization: Bearer [object Object]
+
+{"snippet": {"user": "Hello word JWT", "text": "true"}}
+
+<> 2019-03-06T114525.200.json
+
+###
+
+POST http://127.0.0.1:8080/snippets
+Content-Type: application/json
+Authorization: Bearer [object Object]
+
+{"snippet": {"key": "Hello word JWT", "boolean": "true"}}
+
+###
+
+POST http://127.0.0.1:8080/login-register
+Content-Type: application/json
+
+{"user": "test", "password": "test"}
+
+<> 2019-03-06T114439.200.json
+
+###
+
+POST http://127.0.0.1:8080/snippets
+Content-Type: application/json
+Authorization: Bearer [object Object]
+
+{"snippet": {"key": "Hello word JWT", "boolean": "true"}}
+
+<> 2019-03-06T113928.200.json
+
+###
+
+POST http://127.0.0.1:8080/login-register
+Content-Type: application/json
+
+{"user": "test", "password": "test"}
+
+<> 2019-03-06T113917.200.json
+
+###
+
+POST http://127.0.0.1:8080/login-register
+Content-Type: application/json
+
+{"user": "test", "password": "test"}
+
+<> 2019-03-06T113732.200.json
+
+###
+
+POST http://127.0.0.1:8080/login-register
+Content-Type: application/json
+
+{"user": "test", "password": "test"}
+
+<> 2019-03-06T110114.200.json
+
+###
+
+POST http://{{host}}/login-register
+Content-Type: application/json
+
+{"user": "test", "password": "test"}
+
+###
+
+POST http://127.0.0.1:8080/snippets
+Content-Type: application/json
+Authorization: Bearer [object Object]
+
+{"snippet": {"key": "Hello word JWT", "boolean": "true"}}
+
+<> 2019-03-06T104912.200.json
+
+###
+
+POST http://127.0.0.1:8080/login-register
+Content-Type: application/json
+
+{"user": "test", "password": "test"}
+
+<> 2019-03-06T104910.200.json
+
+###
+
+POST http://127.0.0.1:8080/snippets
+Content-Type: application/json
+Authorization: Bearer [object Object]
+
+{"snippet": {"key": "Hello word JWT", "boolean": "true"}}
+
+<> 2019-03-06T104855.200.json
+
+###
+
+POST http://127.0.0.1:8080/login-register
+Content-Type: application/json
+
+{"user": "test", "password": "test"}
+
+<> 2019-03-06T104450.200.json
+
+###
+
+POST http://127.0.0.1:8080/snippets
+Content-Type: application/json
+
+{"snippest": {"key": "mysnippest", "boolean": "true"}}
+
+<> 2019-03-06T092413.200.json
+
+###
+
+POST http://127.0.0.1:8080/snippets
+Content-Type: application/json
+
+{"snippest": {"key": "mysnippest", "boolean": "true"}}
+
+<> 2019-03-06T091510.200.json
+
+###
+
+POST https://127.0.0.1:8080/snippets
+Content-Type: application/json
+
+{"snippest": {"key": "mysnippest", "boolean": "true"}}
+
+###
+
+POST http://127.0.0.1:8080/snippets
+Content-Type: application/json
+
+{"snippest": {"key": "mysnippest", "boolean": "true"}}
+
+<> 2019-03-06T091411.200.json
+
+###
+
+POST https://127.0.0.1:8080/snippets
+Content-Type: application/json
+
+{"snippest": {"key": "mysnippest", "boolean": "true"}}
+
+###
+
+POST https://127.0.0.1:8080/snippets
+Content-Type: application/json
+
+{"snippest": {"key": "mysnippest", "boolean": "true"}}
+
+###
+
+POST https://127.0.0.1:8080/snippets
+Content-Type: application/json
+
+{"snippest": {"text": "mysnippest"}}
+
+###
+
+POST https://127.0.0.1:8080/snippets
+Content-Type: application/json
+
+{"snippest": {"text": "mysnippest"}}
+
+###
+
+POST https://127.0.0.1:8080/snippets
+Content-Type: application/json
+
+{"snippest": {"text": "mysnippest"}}
+
+###
+
