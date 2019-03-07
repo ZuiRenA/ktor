@@ -41,4 +41,8 @@ dependencies {
 
     compile "io.ktor:ktor-auth:$ktor_version"
     compile "io.ktor:ktor-auth-jwt:$ktor_version"
+
+    compile "com.h2database:h2:$h2_version"
+    compile "com.zaxxer:HikariCP:$hikari_version"
+    compile 'org.jetbrains.exposed:exposed:0.11.2'
 }

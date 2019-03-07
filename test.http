@@ -1,9 +1,6 @@
-POST {{host}}/login-register
+POST {{host}}/login
 Content-Type: application/json
 
-{"user": "test", "password": "invalid-password"}
+{"user": "123456", "password": "aaaa"}
 
-> {%
-  client.assert(typeof response.body !== "undefined", "No token returned");
-  client.global.set("auth_token", response.body);
-  %}
+###

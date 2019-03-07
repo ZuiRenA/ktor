@@ -1,56 +1,55 @@
 package com.shen
 
-import com.auth0.jwt.JWT
-import com.auth0.jwt.algorithms.Algorithm
-import io.ktor.application.*
+import com.shen.database.DatabaseFactory
+import com.shen.database.SchoolGuideTimeTable
+import com.shen.database.SchoolInfoTable
+import com.shen.database.UsersTable
+import io.ktor.application.Application
+import io.ktor.application.call
+import io.ktor.application.install
 import io.ktor.auth.*
-import io.ktor.auth.jwt.jwt
-import io.ktor.response.*
-import io.ktor.request.*
-import io.ktor.routing.*
-import io.ktor.http.*
-import io.ktor.gson.*
-import io.ktor.features.*
-import io.ktor.client.*
-import io.ktor.client.engine.apache.*
-import org.apache.http.HttpStatus
-import java.lang.RuntimeException
+import io.ktor.client.HttpClient
+import io.ktor.client.engine.apache.Apache
+import io.ktor.features.ContentNegotiation
+import io.ktor.gson.gson
+import io.ktor.response.respond
+import io.ktor.routing.post
+import io.ktor.routing.route
+import io.ktor.routing.routing
+import org.jetbrains.exposed.sql.Table
+import org.jetbrains.exposed.sql.selectAll
 import java.util.*
 
 fun main(args: Array<String>): Unit = io.ktor.server.netty.EngineMain.main(args)
 
-val snippets = Collections.synchronizedList(mutableListOf(
-    Snippet("Shen", "aaa"),
-    Snippet("chao", "bbb")
-))
-
-open class SimpleJWT(val secret: String) {
-    private val algorithm = Algorithm.HMAC256(secret)
-    val verifier = JWT.require(algorithm).build()
-
-    fun sign(name: String): String = JWT.create().withClaim("name", name).sign(algorithm)
-}
-
-class User(val name: String, val password: String)
-class LoginRegister(val user: String, val password: String)
-
-val users = Collections.synchronizedMap(
-    listOf(User("test", "test"))
-        .associateBy { it.name }
-        .toMutableMap()
+data class test(
+    val phone: Int,
+    val password: String
 )
-
-class InvalidCredentialsException(message: String): RuntimeException(message)
-
 @Suppress("unused") // Referenced in application.conf
 @kotlin.jvm.JvmOverloads
 fun Application.module(testing: Boolean = false) {
-    val simpleJWT = SimpleJWT("my-super-secret-for-jwt")
+    val tableList = listOf(
+        UsersTable,
+        SchoolInfoTable,
+        SchoolGuideTimeTable
+    )
+    val usersTable = tableList[0] as UsersTable
+    val phonePSW = Collections.synchronizedMap(mutableMapOf<String, test>())
     install(Authentication) {
-        jwt {
-            verifier(simpleJWT.verifier)
-            validate {
-                UserIdPrincipal(it.payload.getClaim("name").asString())
+        form("login") {
+            userParamName = "phone_number"
+            passwordParamName = "password"
+            challenge = FormAuthChallenge.Unauthorized
+            validate { credentials ->
+                usersTable.selectAll().forEach {
+                    phonePSW[it[UsersTable.name]] = test(it[UsersTable.phone_number], it[UsersTable.password])
+                }
+
+                if (phonePSW[credentials.name]?.password == credentials.password)
+                    UserIdPrincipal(credentials.name)
+                else
+                    null
             }
         }
     }
@@ -60,46 +59,18 @@ fun Application.module(testing: Boolean = false) {
         }
     }
 
-    install(StatusPages) {
-        exception<InvalidCredentialsException> {
-            call.respond(HttpStatusCode.Unauthorized, mapOf("ok" to false, "error" to (it.message ?: "")))
-        }
-    }
-
-    val client = HttpClient(Apache) {
-    }
+    DatabaseFactory.init(table = tableList)
 
     routing {
-        post("/login-register") {
-            val post = call.receive<LoginRegister>()
-            val user = users.getOrPut(post.user){  User(post.user, post.password) }
-            if (user.password != post.password) throw InvalidCredentialsException("Invalid credentials")
-            call.respond(mapOf("token" to simpleJWT.sign(user.name)))
-        }
-
-        get("/") {
-            call.respondText("HELLO WORLD!", contentType = ContentType.Text.Plain)
-        }
-
-        get("/json/gson") {
-            call.respond(mapOf("hello" to "world"))
-        }
-
-        get("/test") {
-            call.respond(Snippet(user = "shen", text = "aaa"))
-        }
-
-        route("/snippets") {
-            get {
-                call.respond(mapOf("snippets" to synchronized(snippets){ snippets.toList()}))
-            }
-
-            authentication {
+        route("/login") {
+            authenticate("login") {
                 post {
-                    val post = call.receive<Snippet>()
-                    val principal = call.principal<UserIdPrincipal>() ?: error("No principal")
-                    snippets += Snippet(principal.name, post.text)
-                    call.respond(mapOf("ok" to true))
+                    val principal = call.principal<UserIdPrincipal>()
+                    if (principal == null) {
+                        call.respond(mapOf("error" to "No principal"))
+                    } else {
+                        call.respond("true")
+                    }
                 }
             }
         }
