@@ -41,15 +41,25 @@ fun Application.module(testing: Boolean = false) {
             val keyAndValue = call.receive<PandP>()
             val userList: List<Users>? = DatabaseFactory.selectAll(UsersTable) as List<Users>
             userList?.let {
-                userList.forEach { user ->
+                var hasPhoneNumber = false
+                var index = -1
+                userList.forEachIndexed { currentIndex, user ->
                     if (user.phone_number == keyAndValue.phone_number) {
-                        if (user.password == keyAndValue.password)
-                            call.respond(isSuccess(isSuccess = true, respond = user))
-                        else
-                            call.respond(isSuccess(isSuccess = false, errorReason = "密码错误"))
-                    } else
-                        call.respond(isSuccess(isSuccess = false, errorReason = "手机号错误"))
+                        index = currentIndex
+                        hasPhoneNumber = true
+                    } else {
+                        if (!hasPhoneNumber)
+                            hasPhoneNumber = false
+                    }
                 }
+
+                if (hasPhoneNumber) {
+                    if (userList[index].password == keyAndValue.password)
+                        call.respond(isSuccess(isSuccess = true, respond = userList[index]))
+                    else
+                        call.respond(isSuccess(isSuccess = false, errorReason = "密码错误"))
+                } else
+                    call.respond(isSuccess(isSuccess = false, errorReason = "手机号错误"))
             }
         }
 

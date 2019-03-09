@@ -1,3 +1,192 @@
+POST http://127.0.0.1:8080/login
+Content-Type: application/json
+
+{"phone_number": 13405665741, "password": "aaaa"}
+
+<> 2019-03-10T035757.200.json
+
+###
+
+POST http://127.0.0.1:8080/login
+Content-Type: application/json
+
+{"phone_number": 111111561, "password": "aaaa"}
+
+<> 2019-03-10T035633.200.json
+
+###
+
+POST http://127.0.0.1:8080/login
+Content-Type: application/json
+
+{"phone_number": 111111561, "password": "aaaa"}
+
+<> 2019-03-10T032732.200.json
+
+###
+
+POST http://127.0.0.1:8080/login
+Content-Type: application/json
+
+{"phone_number": 111111561, "password": "aaaa"}
+
+###
+
+POST http://127.0.0.1:8080/login
+Content-Type: application/json
+
+{"phone_number": 111111561, "password": "aaaa"}
+
+###
+
+POST http://127.0.0.1:8080/login
+Content-Type: application/json
+
+{"phone_number": 13405665741, "password": "aaaa"}
+
+<> 2019-03-10T032627.200.json
+
+###
+
+POST http://127.0.0.1:8080/register
+Content-Type: application/json
+
+{"name": "不朽之城美女吧车厢内", "phone_number": 13405665741, "password": "aaaa"}
+
+<> 2019-03-10T032509.200.json
+
+###
+
+POST http://127.0.0.1:8080/register
+Content-Type: application/json
+
+{"name": "不朽之城美女吧车厢内", "phone_number": 111111561, "password": "aaaa"}
+
+<> 2019-03-10T032458.200.json
+
+###
+
+POST http://127.0.0.1:8080/login
+Content-Type: application/json
+
+{"phone_number": "14484", "password": "aaaa"}
+
+<> 2019-03-10T032348.200.json
+
+###
+
+POST http://127.0.0.1:8080/login
+Content-Type: application/json
+
+{"phone_number": "12d31651", "password": "aaaa"}
+
+###
+
+POST http://127.0.0.1:8080/login
+Content-Type: application/json
+
+{"phone_number": "12d31651", "password": "aaaa"}
+
+###
+
+POST http://127.0.0.1:8080/login
+Content-Type: application/json
+
+{"phone_number": "14815163211", "password": "123131"}
+
+<> 2019-03-10T032328.200.json
+
+###
+
+POST http://{{host}}/login
+Content-Type: application/json
+
+{"phone_number": "14815163211", "password": "123131"}
+
+###
+
+POST http://127.0.0.1:8080/login
+Content-Type: application/json
+
+{"phone_number": "14815163211", "password": "aaaa"}
+
+<> 2019-03-10T032311.200.json
+
+###
+
+POST http://{{host}}/login
+Content-Type: application/json
+
+{"phone_number": "14815163211", "password": "aaaa"}
+
+###
+
+POST http://127.0.0.1:8080/login
+Content-Type: application/json
+
+{"phone_number": "15676154335", "password": "123"}
+
+<> 2019-03-10T032246.200.json
+
+###
+
+POST http://127.0.0.1:8080/login
+Content-Type: application/json
+
+{"phone_number": "15676154335", "password": "123"}
+
+<> 2019-03-10T032200.200.json
+
+###
+
+POST http://127.0.0.1:8080/login
+Content-Type: application/json
+
+{"phone_number": "13405665741", "password": "aaaa"}
+
+<> 2019-03-10T032135.200.json
+
+###
+
+POST http://127.0.0.1:8080/login
+Content-Type: application/json
+
+{"phone_number": "13405665741", "password": "aaaa"}
+
+###
+
+POST http://127.0.0.1:8080/login
+Content-Type: application/json
+
+{"phone_number": "13405665741", "password": "aaaa"}
+
+###
+
+POST http://127.0.0.1:8080/login
+Content-Type: application/json
+
+{"phone_number": 13405665741, "password": "aaaa"}
+
+<> 2019-03-10T031959.200.json
+
+###
+
+POST http://127.0.0.1:8080/login
+Content-Type: application/json
+
+{"phone_number": 13405665741, "password": "aaaa"}
+
+###
+
+POST http://127.0.0.1:8080/schoolInfo
+Content-Type: application/json
+
+{"id": 229}
+
+<> 2019-03-10T031801.200.json
+
+###
+
 POST http://127.0.0.1:8080/schoolInfo
 Content-Type: application/json
 
@@ -222,187 +411,6 @@ Content-Type: application/json
 {"id": "1"}
 
 <> 2019-03-09T104348.200.json
-
-###
-
-POST http://127.0.0.1:8080/schoolInfo
-Content-Type: application/json
-
-{"id": "1"}
-
-<> 2019-03-09T104333.200.json
-
-###
-
-POST http://127.0.0.1:8080/schoolInfo
-Content-Type: application/json
-
-{"id": "1"}
-
-<> 2019-03-09T104139.200.json
-
-###
-
-POST http://127.0.0.1:8080/schoolInfo
-Content-Type: application/json
-
-{"id": "1"}
-
-<> 2019-03-09T103809.200.json
-
-###
-
-POST http://127.0.0.1:8080/schoolInfo
-Content-Type: application/json
-
-{"id": "1"}
-
-<> 2019-03-09T103314.200.json
-
-###
-
-POST http://{{host}}/schoolInfo
-Content-Type: application/json
-
-{"id": "1"}
-
-###
-
-POST http://127.0.0.1:8080/schoolInfo
-Content-Type: application/json
-
-{"id": "1"}
-
-<> 2019-03-09T103036.200.json
-
-###
-
-POST http://127.0.0.1:8080/schoolInfo
-Content-Type: application/json
-
-{"school_id": "1"}
-
-###
-
-POST http://127.0.0.1:8080/login
-Content-Type: application/json
-
-{"phone_number": "13405665741", "password": "aaaa"}
-
-<> 2019-03-09T093554.200.json
-
-###
-
-POST http://127.0.0.1:8080/login
-Content-Type: application/json
-
-{"phone_number": "14815163211", "password": "aaaa"}
-
-<> 2019-03-09T093544.200.json
-
-###
-
-POST http://127.0.0.1:8080/login
-Content-Type: application/json
-
-{"phone_number": "14815163211", "password": "aaaa"}
-
-<> 2019-03-09T085643.200.json
-
-###
-
-POST http://127.0.0.1:8080/login
-Content-Type: application/json
-
-{"phone_number": "123456", "password": "aaaa"}
-
-<> 2019-03-09T085630.200.json
-
-###
-
-POST http://127.0.0.1:8080/login
-Content-Type: application/json
-
-{"phone_number": "123456", "password": "aaaa"}
-
-<> 2019-03-09T085105.200.json
-
-###
-
-POST http://127.0.0.1:8080/login
-Content-Type: application/json
-
-{"phone_number": "123456", "password": "aaaa"}
-
-###
-
-POST http://127.0.0.1:8080/login
-Content-Type: application/json
-
-{"phone_number": "123456", "password": "aaaa"}
-
-###
-
-POST http://{{host}}/login
-Content-Type: application/json
-
-{"phone_number": "123456", "password": "aaaa"}
-
-###
-
-POST http://127.0.0.1:8080/login
-Content-Type: application/json
-
-{"phone_number": "123456", "password": "aaaa"}
-
-###
-
-POST http://127.0.0.1:8080/login
-Content-Type: application/json
-
-{"phone_number": "123456", "password": "aaaa"}
-
-###
-
-POST http://127.0.0.1:8080/login
-Content-Type: application/json
-
-{"phone_number": "123456", "password": "aaaa"}
-
-###
-
-POST http://127.0.0.1:8080/login
-Content-Type: application/json
-
-{"phone_number": "123456", "password": "aaaa"}
-
-###
-
-POST http://127.0.0.1:8080/login
-Content-Type: application/json
-
-{"phone_number": "123456", "password": "aaaa"}
-
-###
-
-POST http://127.0.0.1:8080/login
-Content-Type: application/json
-
-{"phone_number": "123456", "password": "aaaa"}
-
-###
-
-POST http://127.0.0.1:8080/login
-Content-Type: application/json
-
-{"phone_number": "123456", "password": "aaaa"}
-
-###
-
-POST http://127.0.0.1:8080/login
-Content-Type: application/json
-
-{"phone_number": "123456", "password": "aaaa"}
 
 ###
 

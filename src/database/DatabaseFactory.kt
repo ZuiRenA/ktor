@@ -98,7 +98,7 @@ object DatabaseFactory : DatabaseHelper {
         var insertCode = isSuccess(false)
         when (table) {
             is UsersTable -> {
-                dbQuery {
+                dbSet {
                     try {
                         val users = model as Users
                         val avatar = users.user_avatar ?: ""
@@ -200,7 +200,7 @@ object DatabaseFactory : DatabaseHelper {
         var list: List<Any>? = null
         when (table) {
             is UsersTable -> {
-                list = dbQuery {
+                list = dbSet {
                     table.selectAll().map { row ->
                         selectUsers(row)
                     }
@@ -208,7 +208,7 @@ object DatabaseFactory : DatabaseHelper {
 
             }
             is SchoolInfoTable -> {
-                list = dbQuery {
+                list = dbSet {
                     table.selectAll().map { row ->
                         selectSchoolInfo(row)
                     }
@@ -216,7 +216,7 @@ object DatabaseFactory : DatabaseHelper {
             }
 
             is SchoolGuideTimeTable -> {
-                list = dbQuery {
+                list = dbSet {
                     table.selectAll().map { row ->
                         selectGuideTime(row)
                     }
@@ -225,7 +225,7 @@ object DatabaseFactory : DatabaseHelper {
             }
 
             is SchoolDormitoryTable -> {
-                list = dbQuery {
+                list = dbSet {
                     table.selectAll().map { row ->
                         selectSchoolDormitory(row)
                     }
@@ -293,14 +293,14 @@ object DatabaseFactory : DatabaseHelper {
         hikariConfig.jdbcUrl = "jdbc:h2:~/main"
         hikariConfig.username = "shen"
         hikariConfig.password = "1234"
-        hikariConfig.maximumPoolSize = 20
+        hikariConfig.maximumPoolSize = 8
         hikariConfig.isAutoCommit = false
         hikariConfig.transactionIsolation = "TRANSACTION_REPEATABLE_READ"
         hikariConfig.validate()
         return HikariDataSource(hikariConfig)
     }
 
-    suspend fun <T> dbQuery(
+    suspend fun <T> dbSet(
         block: () -> T
     ): T =
         withContext(Dispatchers.IO) {

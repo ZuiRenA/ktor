@@ -1,6 +1,7 @@
-POST {{host}}/schoolInfo
+POST {{host}}/login
 Content-Type: application/json
 
-{"id": 229}
+{"phone_number": 13405665741, "password": "aaaa"}
+
 ###
 
