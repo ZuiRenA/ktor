@@ -7,7 +7,7 @@ open class UsersInfo : Table() {
     //昵称(显示在外的)
     val name = varchar("name", 255)
     //手机号
-    val phone_number = integer("phone_number").uniqueIndex()
+    val phone_number = long("phone_number").uniqueIndex()
     //密码
     val password = varchar("password", 255)
     //用户头像
@@ -20,11 +20,13 @@ open class UsersInfo : Table() {
     val user_name = varchar("user_name", 255)
     //用户身份证号
     val user_id_card = varchar("user_id_card", 255)
+    //用户宿舍
+    val user_dormitory = varchar("user_dormitory", 255)
 }
 
 open class SchoolInfo : Table() {
     val school_id = integer("school_id").primaryKey().autoIncrement()
-    val school_name = varchar("school_name", 255)
+    val school_name = varchar("school_name", 255).uniqueIndex()
     val school_address = varchar("school_address", 255)
     val school_introduce = varchar("school_introduce", 255)
 
@@ -36,11 +38,24 @@ open class SchoolInfo : Table() {
 }
 
 open class SchoolGuideTime : Table() {
-    val guide_college = (varchar("guide_college", 255) references UsersTable.user_college).primaryKey().nullable()
+    val school_id = (integer("school_id") references SchoolInfoTable.school_id).primaryKey().nullable()
+    val guide_college = varchar("guide_college", 255)
     val guide_time_one = varchar("guide_time_one", 255)
     val guide_time_two = varchar("guide_time_two", 255)
+}
+
+open class SchoolDormitory: Table() {
+    val school_id = (integer("school_id") references SchoolInfoTable.school_id).nullable()
+    val dormitory_id  = integer("dormitory_id").primaryKey().autoIncrement()
+    val dormitory_name = varchar("dormitory_name", 255).uniqueIndex()
+
+    val dormitory_student_0 = varchar("dormitory_student_0", 255)
+    val dormitory_student_1 = varchar("dormitory_student_1", 255)
+    val dormitory_student_2 = varchar("dormitory_student_2", 255)
+    val dormitory_student_3 = varchar("dormitory_student_3", 255)
 }
 
 object UsersTable : UsersInfo()
 object SchoolInfoTable : SchoolInfo()
 object SchoolGuideTimeTable : SchoolGuideTime()
+object SchoolDormitoryTable : SchoolDormitory()

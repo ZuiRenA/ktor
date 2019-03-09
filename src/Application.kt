@@ -1,58 +1,33 @@
 package com.shen
 
-import com.shen.database.DatabaseFactory
-import com.shen.database.SchoolGuideTimeTable
-import com.shen.database.SchoolInfoTable
-import com.shen.database.UsersTable
+import com.shen.database.*
+import com.shen.model.Id
+import com.shen.model.PandP
+import com.shen.model.Users
+import com.shen.model.isSuccess
 import io.ktor.application.Application
 import io.ktor.application.call
 import io.ktor.application.install
-import io.ktor.auth.*
-import io.ktor.client.HttpClient
-import io.ktor.client.engine.apache.Apache
 import io.ktor.features.ContentNegotiation
 import io.ktor.gson.gson
+import io.ktor.request.receive
 import io.ktor.response.respond
+import io.ktor.routing.get
 import io.ktor.routing.post
-import io.ktor.routing.route
 import io.ktor.routing.routing
-import org.jetbrains.exposed.sql.Table
-import org.jetbrains.exposed.sql.selectAll
-import java.util.*
 
 fun main(args: Array<String>): Unit = io.ktor.server.netty.EngineMain.main(args)
 
-data class test(
-    val phone: Int,
-    val password: String
-)
+
 @Suppress("unused") // Referenced in application.conf
 @kotlin.jvm.JvmOverloads
 fun Application.module(testing: Boolean = false) {
     val tableList = listOf(
         UsersTable,
         SchoolInfoTable,
-        SchoolGuideTimeTable
+        SchoolGuideTimeTable,
+        SchoolDormitoryTable
     )
-    val usersTable = tableList[0] as UsersTable
-    val phonePSW = Collections.synchronizedMap(mutableMapOf<String, test>())
-    install(Authentication) {
-        form("login") {
-            userParamName = "phone_number"
-            passwordParamName = "password"
-            challenge = FormAuthChallenge.Unauthorized
-            validate { credentials ->
-                usersTable.selectAll().forEach {
-                    phonePSW[it[UsersTable.name]] = test(it[UsersTable.phone_number], it[UsersTable.password])
-                }
-
-                if (phonePSW[credentials.name]?.password == credentials.password)
-                    UserIdPrincipal(credentials.name)
-                else
-                    null
-            }
-        }
-    }
 
     install(ContentNegotiation) {
         gson {
@@ -62,17 +37,45 @@ fun Application.module(testing: Boolean = false) {
     DatabaseFactory.init(table = tableList)
 
     routing {
-        route("/login") {
-            authenticate("login") {
-                post {
-                    val principal = call.principal<UserIdPrincipal>()
-                    if (principal == null) {
-                        call.respond(mapOf("error" to "No principal"))
-                    } else {
-                        call.respond("true")
-                    }
+        post("/login") {
+            val keyAndValue = call.receive<PandP>()
+            val userList: List<Users>? = DatabaseFactory.selectAll(UsersTable) as List<Users>
+            userList?.let {
+                userList.forEach { user ->
+                    if (user.phone_number == keyAndValue.phone_number) {
+                        if (user.password == keyAndValue.password)
+                            call.respond(isSuccess(isSuccess = true, respond = user))
+                        else
+                            call.respond(isSuccess(isSuccess = false, errorReason = "密码错误"))
+                    } else
+                        call.respond(isSuccess(isSuccess = false, errorReason = "手机号错误"))
                 }
             }
+        }
+
+        post("/register") {
+            val registerInfo = call.receive<Users>()
+            val userList: List<Users>? = DatabaseFactory.selectAll(UsersTable) as List<Users>
+            userList?.let {
+                var hasPhoneNumber = false
+                userList.forEach { user ->
+                    if (user.phone_number == registerInfo.phone_number)
+                        hasPhoneNumber = true
+                    else {
+                        if (!hasPhoneNumber)
+                            hasPhoneNumber = false
+                    }
+                }
+                if (hasPhoneNumber)
+                    call.respond(isSuccess(isSuccess = false, errorReason = "手机号已存在"))
+                else
+                    call.respond(DatabaseFactory.insert(UsersTable, registerInfo))
+            }
+        }
+
+        post("/schoolInfo") {
+            val id = call.receive<Id>()
+            call.respond(DatabaseFactory.select(SchoolInfoTable, id.id))
         }
     }
 }

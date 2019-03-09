@@ -1,0 +1,4 @@
+{
+  "isSuccess": false,
+  "errorReason": "org.jetbrains.exposed.exceptions.ExposedSQLException: org.h2.jdbc.JdbcSQLIntegrityConstraintViolationException: Unique index or primary key violation: \"PUBLIC.USERS_PHONE_NUMBER_UNIQUE_INDEX_4 ON PUBLIC.USERS(PHONE_NUMBER) VALUES 33\"; SQL statement:\nINSERT INTO USERS (ID, NAME, PASSWORD, PHONE_NUMBER, USER_AVATAR, USER_COLLEGE, USER_DORMITORY, USER_ID_CARD, USER_NAME, USER_SCHOOL) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) [23505-198]\nSQL: [INSERT INTO USERS (ID, NAME, PASSWORD, PHONE_NUMBER, USER_AVATAR, USER_COLLEGE, USER_DORMITORY, USER_ID_CARD, USER_NAME, USER_SCHOOL) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)]"
+}

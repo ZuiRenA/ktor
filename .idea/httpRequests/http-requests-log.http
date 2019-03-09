@@ -1,274 +1,408 @@
-POST http://127.0.0.1:8080/login
+POST http://127.0.0.1:8080/schoolInfo
 Content-Type: application/json
 
-{"user": "123456", "password": "aaaa"}
+{"id": 229}
+
+<> 2019-03-09T111419.200.json
+
+###
+
+POST http://127.0.0.1:8080/schoolInfo
+Content-Type: application/json
+
+{"id": 229}
+
+###
+
+POST http://127.0.0.1:8080/schoolInfo
+Content-Type: application/json
+
+{"int": 1}
+
+###
+
+POST http://127.0.0.1:8080/schoolInfo
+Content-Type: application/json
+
+{"id": 229}
+
+<> 2019-03-09T111206.200.json
+
+###
+
+POST http://127.0.0.1:8080/schoolInfo
+Content-Type: application/json
+
+{"id": 229}
+
+###
+
+POST http://127.0.0.1:8080/schoolInfo
+Content-Type: application/json
+
+{"id": 229}
+
+###
+
+POST http://127.0.0.1:8080/schoolInfo
+Content-Type: application/json
+
+{"id": 229}
+
+###
+
+POST http://127.0.0.1:8080/schoolInfo
+Content-Type: application/json
+
+{"id": 229}
+
+###
+
+POST http://127.0.0.1:8080/schoolInfo
+Content-Type: application/json
+
+{"id": 229}
+
+###
+
+POST http://127.0.0.1:8080/schoolInfo
+Content-Type: application/json
+
+{"id": 1}
+
+<> 2019-03-09T111038.200.json
+
+###
+
+POST http://127.0.0.1:8080/register
+Content-Type: application/json
+
+{"name": "沈超", "phone_number": 15676154335, "password": "123"}
+
+###
+
+POST http://127.0.0.1:8080/register
+Content-Type: application/json
+
+{"name": "沈超", "phone_number": 15676154335, "password": "123"}
+
+<> 2019-03-09T110442.200.json
+
+###
+
+POST http://127.0.0.1:8080/register
+Content-Type: application/json
+
+{"name": "沈超", "phone_number": 215645515631, "password": "123"}
+
+<> 2019-03-09T110423.200.json
+
+###
+
+POST http://127.0.0.1:8080/register
+Content-Type: application/json
+
+{"name": "沈超", "phone_number": 13405665741, "password": "123"}
+
+<> 2019-03-09T110414.200.json
+
+###
+
+POST http://127.0.0.1:8080/register
+Content-Type: application/json
+
+{"name": "沈超", "phone_number": 13405665741, "password": "123"}
+
+<> 2019-03-09T110403.200.json
+
+###
+
+POST http://127.0.0.1:8080/register
+Content-Type: application/json
+
+{"name": "沈超", "phone_number": 15676154335, "password": "123"}
+
+<> 2019-03-09T105754.200.json
+
+###
+
+POST http://127.0.0.1:8080/register
+Content-Type: application/json
+
+{"name": "沈超", "phone_number": 13405665741, "password": "123"}
+
+<> 2019-03-09T105718.200.json
+
+###
+
+POST http://127.0.0.1:8080/register
+Content-Type: application/json
+
+{"name": "沈超", "phone_number": 13405665741, "password": "123"}
+
+<> 2019-03-09T105704.200.json
+
+###
+
+POST http://127.0.0.1:8080/register
+Content-Type: application/json
+
+{"name": "沈超", "phone_number": 13405665741, "password": "123"}
+
+<> 2019-03-09T105548.200.json
+
+###
+
+POST http://127.0.0.1:8080/register
+Content-Type: application/json
+
+{"name": "沈超", "phone_number": 13405665741, "password": "123"}
+
+<> 2019-03-09T105531.200.json
+
+###
+
+POST http://127.0.0.1:8080/register
+Content-Type: application/json
+
+{"name": "沈超", "phone_number": 13405665741, "password": "123"}
+
+<> 2019-03-09T105342.200.json
+
+###
+
+POST http://127.0.0.1:8080/register
+Content-Type: application/json
+
+{"name": "沈超", "phone_number": 13405665741, "password": "123"}
+
+<> 2019-03-09T105029.200.json
+
+###
+
+POST http://127.0.0.1:8080/register
+Content-Type: application/json
+
+{"name": "沈超", "phone_number": 13405665741, "password": "123"}
+
+<> 2019-03-09T104945.200.json
+
+###
+
+POST http://127.0.0.1:8080/schoolInfo
+Content-Type: application/json
+
+{"id": 1}
+
+<> 2019-03-09T104740.200.json
+
+###
+
+POST http://127.0.0.1:8080/schoolInfo
+Content-Type: application/json
+
+{"id": 1}
+
+<> 2019-03-09T104618.200.json
+
+###
+
+POST http://127.0.0.1:8080/schoolInfo
+Content-Type: application/json
+
+{"id": "1"}
+
+<> 2019-03-09T104549.200.json
+
+###
+
+POST http://127.0.0.1:8080/schoolInfo
+Content-Type: application/json
+
+{"id": "1"}
+
+<> 2019-03-09T104348.200.json
+
+###
+
+POST http://127.0.0.1:8080/schoolInfo
+Content-Type: application/json
+
+{"id": "1"}
+
+<> 2019-03-09T104333.200.json
+
+###
+
+POST http://127.0.0.1:8080/schoolInfo
+Content-Type: application/json
+
+{"id": "1"}
+
+<> 2019-03-09T104139.200.json
+
+###
+
+POST http://127.0.0.1:8080/schoolInfo
+Content-Type: application/json
+
+{"id": "1"}
+
+<> 2019-03-09T103809.200.json
+
+###
+
+POST http://127.0.0.1:8080/schoolInfo
+Content-Type: application/json
+
+{"id": "1"}
+
+<> 2019-03-09T103314.200.json
+
+###
+
+POST http://{{host}}/schoolInfo
+Content-Type: application/json
+
+{"id": "1"}
+
+###
+
+POST http://127.0.0.1:8080/schoolInfo
+Content-Type: application/json
+
+{"id": "1"}
+
+<> 2019-03-09T103036.200.json
+
+###
+
+POST http://127.0.0.1:8080/schoolInfo
+Content-Type: application/json
+
+{"school_id": "1"}
 
 ###
 
 POST http://127.0.0.1:8080/login
 Content-Type: application/json
 
-{"user": "123456", "password": "aaaa"}
+{"phone_number": "13405665741", "password": "aaaa"}
+
+<> 2019-03-09T093554.200.json
 
 ###
 
 POST http://127.0.0.1:8080/login
 Content-Type: application/json
 
-{"user": "123456", "password": "aaaa"}
+{"phone_number": "14815163211", "password": "aaaa"}
+
+<> 2019-03-09T093544.200.json
 
 ###
 
 POST http://127.0.0.1:8080/login
 Content-Type: application/json
 
-{"user": "123456", "password": "aaaa"}
+{"phone_number": "14815163211", "password": "aaaa"}
+
+<> 2019-03-09T085643.200.json
 
 ###
 
 POST http://127.0.0.1:8080/login
 Content-Type: application/json
 
-{"user": "123456", "password": "aaaa"}
+{"phone_number": "123456", "password": "aaaa"}
+
+<> 2019-03-09T085630.200.json
 
 ###
 
 POST http://127.0.0.1:8080/login
 Content-Type: application/json
 
-{"user": "123456", "password": "aaaa"}
+{"phone_number": "123456", "password": "aaaa"}
+
+<> 2019-03-09T085105.200.json
 
 ###
 
 POST http://127.0.0.1:8080/login
 Content-Type: application/json
 
-{"user": "123456", "password": "aaaa"}
+{"phone_number": "123456", "password": "aaaa"}
 
 ###
 
 POST http://127.0.0.1:8080/login
 Content-Type: application/json
 
-{"user": "123456", "password": "aaaa"}
+{"phone_number": "123456", "password": "aaaa"}
+
+###
+
+POST http://{{host}}/login
+Content-Type: application/json
+
+{"phone_number": "123456", "password": "aaaa"}
 
 ###
 
 POST http://127.0.0.1:8080/login
 Content-Type: application/json
 
-{"user": "123456", "password": "aaaa"}
+{"phone_number": "123456", "password": "aaaa"}
 
 ###
 
 POST http://127.0.0.1:8080/login
 Content-Type: application/json
 
-{"user": "123456", "password": "aaaa"}
+{"phone_number": "123456", "password": "aaaa"}
 
 ###
 
 POST http://127.0.0.1:8080/login
 Content-Type: application/json
 
-{"user": "123456", "password": "aaaa"}
+{"phone_number": "123456", "password": "aaaa"}
 
 ###
 
-POST http://127.0.0.1:8080/login-register
+POST http://127.0.0.1:8080/login
 Content-Type: application/json
 
-{"user": "test", "password": "invalid-password"}
-
-<> 2019-03-07T121620.401.json
+{"phone_number": "123456", "password": "aaaa"}
 
 ###
 
-GET http://127.0.0.1:8080/snippets
+POST http://127.0.0.1:8080/login
 Content-Type: application/json
-Authorization: Bearer [object Object]
 
-{"snippet": {"user": "Hello word JWT", "text": "true"}}
-
-<> 2019-03-07T121554.200.json
+{"phone_number": "123456", "password": "aaaa"}
 
 ###
 
-GET http://127.0.0.1:8080/snippets
+POST http://127.0.0.1:8080/login
 Content-Type: application/json
-Authorization: Bearer [object Object]
 
-{"snippet": {"user": "Hello word JWT", "text": "true"}}
-
-<> 2019-03-06T114525.200.json
+{"phone_number": "123456", "password": "aaaa"}
 
 ###
 
-POST http://127.0.0.1:8080/snippets
+POST http://127.0.0.1:8080/login
 Content-Type: application/json
-Authorization: Bearer [object Object]
 
-{"snippet": {"key": "Hello word JWT", "boolean": "true"}}
+{"phone_number": "123456", "password": "aaaa"}
 
 ###
 
-POST http://127.0.0.1:8080/login-register
+POST http://127.0.0.1:8080/login
 Content-Type: application/json
 
-{"user": "test", "password": "test"}
-
-<> 2019-03-06T114439.200.json
-
-###
-
-POST http://127.0.0.1:8080/snippets
-Content-Type: application/json
-Authorization: Bearer [object Object]
-
-{"snippet": {"key": "Hello word JWT", "boolean": "true"}}
-
-<> 2019-03-06T113928.200.json
-
-###
-
-POST http://127.0.0.1:8080/login-register
-Content-Type: application/json
-
-{"user": "test", "password": "test"}
-
-<> 2019-03-06T113917.200.json
-
-###
-
-POST http://127.0.0.1:8080/login-register
-Content-Type: application/json
-
-{"user": "test", "password": "test"}
-
-<> 2019-03-06T113732.200.json
-
-###
-
-POST http://127.0.0.1:8080/login-register
-Content-Type: application/json
-
-{"user": "test", "password": "test"}
-
-<> 2019-03-06T110114.200.json
-
-###
-
-POST http://{{host}}/login-register
-Content-Type: application/json
-
-{"user": "test", "password": "test"}
-
-###
-
-POST http://127.0.0.1:8080/snippets
-Content-Type: application/json
-Authorization: Bearer [object Object]
-
-{"snippet": {"key": "Hello word JWT", "boolean": "true"}}
-
-<> 2019-03-06T104912.200.json
-
-###
-
-POST http://127.0.0.1:8080/login-register
-Content-Type: application/json
-
-{"user": "test", "password": "test"}
-
-<> 2019-03-06T104910.200.json
-
-###
-
-POST http://127.0.0.1:8080/snippets
-Content-Type: application/json
-Authorization: Bearer [object Object]
-
-{"snippet": {"key": "Hello word JWT", "boolean": "true"}}
-
-<> 2019-03-06T104855.200.json
-
-###
-
-POST http://127.0.0.1:8080/login-register
-Content-Type: application/json
-
-{"user": "test", "password": "test"}
-
-<> 2019-03-06T104450.200.json
-
-###
-
-POST http://127.0.0.1:8080/snippets
-Content-Type: application/json
-
-{"snippest": {"key": "mysnippest", "boolean": "true"}}
-
-<> 2019-03-06T092413.200.json
-
-###
-
-POST http://127.0.0.1:8080/snippets
-Content-Type: application/json
-
-{"snippest": {"key": "mysnippest", "boolean": "true"}}
-
-<> 2019-03-06T091510.200.json
-
-###
-
-POST https://127.0.0.1:8080/snippets
-Content-Type: application/json
-
-{"snippest": {"key": "mysnippest", "boolean": "true"}}
-
-###
-
-POST http://127.0.0.1:8080/snippets
-Content-Type: application/json
-
-{"snippest": {"key": "mysnippest", "boolean": "true"}}
-
-<> 2019-03-06T091411.200.json
-
-###
-
-POST https://127.0.0.1:8080/snippets
-Content-Type: application/json
-
-{"snippest": {"key": "mysnippest", "boolean": "true"}}
-
-###
-
-POST https://127.0.0.1:8080/snippets
-Content-Type: application/json
-
-{"snippest": {"key": "mysnippest", "boolean": "true"}}
-
-###
-
-POST https://127.0.0.1:8080/snippets
-Content-Type: application/json
-
-{"snippest": {"text": "mysnippest"}}
-
-###
-
-POST https://127.0.0.1:8080/snippets
-Content-Type: application/json
-
-{"snippest": {"text": "mysnippest"}}
-
-###
-
-POST https://127.0.0.1:8080/snippets
-Content-Type: application/json
-
-{"snippest": {"text": "mysnippest"}}
+{"phone_number": "123456", "password": "aaaa"}
 
 ###
 
