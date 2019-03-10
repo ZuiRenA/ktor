@@ -50,15 +50,20 @@ object DatabaseFactory : DatabaseHelper {
             }
             is SchoolInfoTable -> {
                 try {
-                    table.insert {
-                        it[school_name] = "南宁学院"
-                        it[school_address] = "龙亭路8号南宁学院"
-                        it[school_introduce] = "这是学校简介"
-                        it[school_image_0] = "http://pic.nnxy.cn/upfile/default/photo/original/14331469964373.JPG"
-                        it[school_image_1] = "http://pic.nnxy.cn/upfile/default/photo/original/14331470023364.jpg"
-                        it[school_image_2] = "http://pic.nnxy.cn/upfile/default/photo/original/14331470290851.jpg"
-                        it[school_image_3] = "http://pic.nnxy.cn/upfile/default/photo/original/14331470316913.jpg"
-                        it[school_image_4] = "http://pic.nnxy.cn/upfile/default/photo/original/14333947436115.jpg"
+                    InitSchoolInfo.schoolInfo.forEach { schoolInfo ->
+                        table.insert {
+                            it[school_id] = schoolInfo.school_id
+                            it[school_name] = schoolInfo.school_name
+                            it[school_address] = schoolInfo.school_address
+                            it[school_introduce] = schoolInfo.school_introduce
+                            val initList = listOf(
+                                school_image_0, school_image_1,
+                                school_image_2, school_image_3, school_image_4
+                            )
+                            schoolInfo.image_show_list.forEachIndexed { index, content ->
+                                it[initList[index]] = content
+                            }
+                        }
                     }
                 } catch (e: Exception) {
                     e.printStackTrace()
@@ -66,11 +71,39 @@ object DatabaseFactory : DatabaseHelper {
             }
 
             is SchoolGuideTimeTable -> {
-
+                try {
+                    InitSchoolGuideTime.schoolGuideTime.forEach { schoolGuideTime ->
+                        table.insert {
+                            it[school_id] = schoolGuideTime.school_id
+                            it[guide_college] = schoolGuideTime.guide_college
+                            it[guide_time_one] = schoolGuideTime.guide_time_one
+                            it[guide_time_two] = schoolGuideTime.guide_time_two
+                        }
+                    }
+                } catch (e: Exception) {
+                    e.printStackTrace()
+                }
             }
 
             is SchoolDormitoryTable -> {
-
+                try {
+                    InitSchoolDormitory.schoolDormitory.forEach { schoolDormitory ->
+                        table.insert {
+                            it[school_id] = schoolDormitory.school_id
+                            it[dormitory_id] = schoolDormitory.dormitory_id
+                            it[dormitory_name] = schoolDormitory.dormitory_name
+                            val initList = listOf(
+                                dormitory_student_0, dormitory_student_1,
+                                dormitory_student_2, dormitory_student_3
+                            )
+                            schoolDormitory.dormitory_student_list.forEachIndexed { index, student ->
+                                it[initList[index]] = student
+                            }
+                        }
+                    }
+                } catch (e: Exception) {
+                    e.printStackTrace()
+                }
             }
         }
     }
@@ -149,22 +182,18 @@ object DatabaseFactory : DatabaseHelper {
             is UsersTable -> {
                 contentList?.let {
                     it.forEach { user ->
-                        returnContent = if (where == (user as Users).id)
-                            user
-                        else
-                            isSuccess(false, errorReason = "select_info_error")
-
+                        if (where == (user as Users).id) {
+                            returnContent = user
+                        }
                     }
                 }
             }
             is SchoolInfoTable -> {
                 contentList?.let {
                     it.forEach { schoolInfo ->
-                        returnContent = if ((schoolInfo as SchoolInfo).school_id == where)
-                            schoolInfo
-                        else
-                            isSuccess(false, errorReason = "select_info_error")
-
+                        if ((schoolInfo as SchoolInfo).school_id == where) {
+                            returnContent = schoolInfo
+                        }
                     }
                 }
             }
@@ -172,11 +201,9 @@ object DatabaseFactory : DatabaseHelper {
             is SchoolGuideTimeTable -> {
                 contentList?.let {
                     it.forEach { guideTime ->
-                        returnContent = if (where == (guideTime as SchoolGuideTime).school_id)
-                            guideTime
-                        else
-                            isSuccess(false, errorReason = "select_info_error")
-
+                        if (where == (guideTime as SchoolGuideTime).guide_college) {
+                            returnContent = guideTime
+                        }
                     }
                 }
             }
@@ -184,11 +211,9 @@ object DatabaseFactory : DatabaseHelper {
             is SchoolDormitoryTable -> {
                 contentList?.let {
                     it.forEach { dormitory ->
-                        returnContent = if (where == (dormitory as SchoolInfo).school_id)
-                            dormitory
-                        else
-                            isSuccess(false, errorReason = "select_info_error")
-
+                        if (where == (dormitory as SchoolDormitory).dormitory_id) {
+                            returnContent = dormitory
+                        }
                     }
                 }
             }

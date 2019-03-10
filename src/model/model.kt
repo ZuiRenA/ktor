@@ -15,6 +15,10 @@ data class Id(
     val id: Int
 )
 
+data class Content(
+    val text: String
+)
+
 data class Users(
     val id: Int?,
     val name: String,
@@ -29,23 +33,23 @@ data class Users(
 )
 
 data class SchoolInfo(
-    val school_id: Int?,
-    val school_name: String?,
-    val school_address: String?,
-    val school_introduce: String?,
-    val image_show_list: List<String>?
+    val school_id: Int,
+    val school_name: String,
+    val school_address: String,
+    val school_introduce: String,
+    val image_show_list: List<String>
 )
 
 data class SchoolGuideTime(
     val school_id: Int?,
-    val guide_college: String?,
-    val guide_time_one: String?,
-    val guide_time_two: String?
+    val guide_college: String,
+    val guide_time_one: String,
+    val guide_time_two: String
 )
 
 data class SchoolDormitory(
     val school_id: Int?,
-    val dormitory_id: Int?,
-    val dormitory_name: String?,
-    val dormitory_student_list: List<String>?
+    val dormitory_id: Int,
+    val dormitory_name: String,
+    val dormitory_student_list: List<String>
 )

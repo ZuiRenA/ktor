@@ -1,0 +1,16 @@
+{
+  "isSuccess": true,
+  "respond": {
+    "id": 525,
+    "name": "沈超",
+    "phone_number": 15676154335,
+    "password": "123",
+    "user_avatar": "",
+    "user_school": "",
+    "user_college": "",
+    "user_name": "",
+    "user_id_card": "",
+    "user_dormitory": ""
+  },
+  "errorReason": ""
+}

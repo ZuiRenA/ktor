@@ -1,10 +1,7 @@
 package com.shen
 
 import com.shen.database.*
-import com.shen.model.Id
-import com.shen.model.PandP
-import com.shen.model.Users
-import com.shen.model.isSuccess
+import com.shen.model.*
 import io.ktor.application.Application
 import io.ktor.application.call
 import io.ktor.application.install
@@ -87,6 +84,17 @@ fun Application.module(testing: Boolean = false) {
             val id = call.receive<Id>()
             call.respond(DatabaseFactory.select(SchoolInfoTable, id.id))
         }
+
+        post("/school_guide_time") {
+            val content = call.receive<Content>()
+            call.respond(DatabaseFactory.select(SchoolGuideTimeTable, content.text))
+        }
+
+        post("/school_dormitory") {
+            val id = call.receive<Id>()
+            call.respond(DatabaseFactory.select(SchoolDormitoryTable, id.id))
+        }
+
     }
 }
 

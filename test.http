@@ -1,7 +1,7 @@
-POST {{host}}/login
+POST {{host}}/school_dormitory
 Content-Type: application/json
 
-{"phone_number": 13405665741, "password": "aaaa"}
+{"id": 1}
 
 ###
 

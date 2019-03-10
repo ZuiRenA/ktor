@@ -1,0 +1,11 @@
+{
+  "school_id": 1,
+  "dormitory_id": 1,
+  "dormitory_name": "101",
+  "dormitory_student_list": [
+    "101人0",
+    "101人1",
+    "101人2",
+    "101人3"
+  ]
+}

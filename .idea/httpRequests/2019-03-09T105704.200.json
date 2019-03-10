@@ -1,4 +1,0 @@
-{
-  "isSuccess": false,
-  "errorReason": "java.lang.IllegalStateException: No transaction in context."
-}

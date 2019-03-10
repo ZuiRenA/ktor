@@ -1,3 +1,154 @@
+POST http://127.0.0.1:8080/school_dormitory
+Content-Type: application/json
+
+{"id": 1}
+
+<> 2019-03-11T120557.200.json
+
+###
+
+POST http://127.0.0.1:8080/school_dormitory
+Content-Type: application/json
+
+{"id": 3}
+
+<> 2019-03-11T120552.200.json
+
+###
+
+POST http://127.0.0.1:8080/school_guide_time
+Content-Type: application/json
+
+{"text": "院部5"}
+
+<> 2019-03-10T115956.200.json
+
+###
+
+POST http://127.0.0.1:8080/school_guide_time
+Content-Type: application/json
+
+{"text": "院部4"}
+
+<> 2019-03-10T115952.200.json
+
+###
+
+POST http://127.0.0.1:8080/school_guide_time
+Content-Type: application/json
+
+{"text": "院部1"}
+
+<> 2019-03-10T115947.200.json
+
+###
+
+POST http://127.0.0.1:8080/school_guide_time
+Content-Type: application/json
+
+{"text": "院部1"}
+
+<> 2019-03-10T115545.200.json
+
+###
+
+POST http://127.0.0.1:8080/school_guide_time
+Content-Type: application/json
+
+{"text": "院部1"}
+
+<> 2019-03-10T115529.200.json
+
+###
+
+POST http://127.0.0.1:8080/school_guide_time
+Content-Type: application/json
+
+{"text": "院部1"}
+
+<> 2019-03-10T115428.200.json
+
+###
+
+POST http://127.0.0.1:8080/school_guide_time
+Content-Type: application/json
+
+{"text": "院部4"}
+
+<> 2019-03-10T115351.200.json
+
+###
+
+POST http://127.0.0.1:8080/school_guide_time
+Content-Type: application/json
+
+{"text": "院部1"}
+
+<> 2019-03-10T115252.200.json
+
+###
+
+POST http://127.0.0.1:8080/school_guide_time
+Content-Type: application/json
+
+{"text": "院部1"}
+
+<> 2019-03-10T115248.200.json
+
+###
+
+POST http://127.0.0.1:8080/school_guide_time
+Content-Type: application/json
+
+{"text": "院部1"}
+
+<> 2019-03-10T115157.200.json
+
+###
+
+POST http://127.0.0.1:8080/school_guide_time
+Content-Type: application/json
+
+{"text": "院部1"}
+
+<> 2019-03-10T114803.200.json
+
+###
+
+POST http://127.0.0.1:8080/school_guide_time
+Content-Type: application/json
+
+{"text": "院部1"}
+
+<> 2019-03-10T114445.200.json
+
+###
+
+POST http://127.0.0.1:8080/login
+Content-Type: application/json
+
+{"phone_number": 15676154335, "password": "123"}
+
+<> 2019-03-10T104218.200.json
+
+###
+
+POST http://127.0.0.1:8080/login
+Content-Type: application/json
+
+{"phone_number": 13405665741, "password": "aaaa"}
+
+<> 2019-03-10T104201.200.json
+
+###
+
+POST http://127.0.0.1:8080/login
+Content-Type: application/json
+
+{"phone_number": 13405665741, "password": "aaaa"}
+
+###
+
 POST http://127.0.0.1:8080/login
 Content-Type: application/json
 
@@ -260,157 +411,6 @@ Content-Type: application/json
 {"id": 1}
 
 <> 2019-03-09T111038.200.json
-
-###
-
-POST http://127.0.0.1:8080/register
-Content-Type: application/json
-
-{"name": "沈超", "phone_number": 15676154335, "password": "123"}
-
-###
-
-POST http://127.0.0.1:8080/register
-Content-Type: application/json
-
-{"name": "沈超", "phone_number": 15676154335, "password": "123"}
-
-<> 2019-03-09T110442.200.json
-
-###
-
-POST http://127.0.0.1:8080/register
-Content-Type: application/json
-
-{"name": "沈超", "phone_number": 215645515631, "password": "123"}
-
-<> 2019-03-09T110423.200.json
-
-###
-
-POST http://127.0.0.1:8080/register
-Content-Type: application/json
-
-{"name": "沈超", "phone_number": 13405665741, "password": "123"}
-
-<> 2019-03-09T110414.200.json
-
-###
-
-POST http://127.0.0.1:8080/register
-Content-Type: application/json
-
-{"name": "沈超", "phone_number": 13405665741, "password": "123"}
-
-<> 2019-03-09T110403.200.json
-
-###
-
-POST http://127.0.0.1:8080/register
-Content-Type: application/json
-
-{"name": "沈超", "phone_number": 15676154335, "password": "123"}
-
-<> 2019-03-09T105754.200.json
-
-###
-
-POST http://127.0.0.1:8080/register
-Content-Type: application/json
-
-{"name": "沈超", "phone_number": 13405665741, "password": "123"}
-
-<> 2019-03-09T105718.200.json
-
-###
-
-POST http://127.0.0.1:8080/register
-Content-Type: application/json
-
-{"name": "沈超", "phone_number": 13405665741, "password": "123"}
-
-<> 2019-03-09T105704.200.json
-
-###
-
-POST http://127.0.0.1:8080/register
-Content-Type: application/json
-
-{"name": "沈超", "phone_number": 13405665741, "password": "123"}
-
-<> 2019-03-09T105548.200.json
-
-###
-
-POST http://127.0.0.1:8080/register
-Content-Type: application/json
-
-{"name": "沈超", "phone_number": 13405665741, "password": "123"}
-
-<> 2019-03-09T105531.200.json
-
-###
-
-POST http://127.0.0.1:8080/register
-Content-Type: application/json
-
-{"name": "沈超", "phone_number": 13405665741, "password": "123"}
-
-<> 2019-03-09T105342.200.json
-
-###
-
-POST http://127.0.0.1:8080/register
-Content-Type: application/json
-
-{"name": "沈超", "phone_number": 13405665741, "password": "123"}
-
-<> 2019-03-09T105029.200.json
-
-###
-
-POST http://127.0.0.1:8080/register
-Content-Type: application/json
-
-{"name": "沈超", "phone_number": 13405665741, "password": "123"}
-
-<> 2019-03-09T104945.200.json
-
-###
-
-POST http://127.0.0.1:8080/schoolInfo
-Content-Type: application/json
-
-{"id": 1}
-
-<> 2019-03-09T104740.200.json
-
-###
-
-POST http://127.0.0.1:8080/schoolInfo
-Content-Type: application/json
-
-{"id": 1}
-
-<> 2019-03-09T104618.200.json
-
-###
-
-POST http://127.0.0.1:8080/schoolInfo
-Content-Type: application/json
-
-{"id": "1"}
-
-<> 2019-03-09T104549.200.json
-
-###
-
-POST http://127.0.0.1:8080/schoolInfo
-Content-Type: application/json
-
-{"id": "1"}
-
-<> 2019-03-09T104348.200.json
 
 ###
 
