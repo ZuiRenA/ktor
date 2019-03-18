@@ -1,7 +1,9 @@
-POST {{host}}/school_dormitory
+POST {{host}}/sendMessage
 Content-Type: application/json
 
-{"id": 1}
+{
+  "text": "15676154335"
+}
 
 ###
 

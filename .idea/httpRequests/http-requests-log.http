@@ -1,416 +1,383 @@
-POST http://127.0.0.1:8080/school_dormitory
+POST http://127.0.0.1:8080/sendMessage
 Content-Type: application/json
 
-{"id": 1}
+{
+  "text": "15676154335"
+}
 
-<> 2019-03-11T120557.200.json
+<> 2019-03-18T105120.200.json
 
 ###
 
-POST http://127.0.0.1:8080/school_dormitory
+POST http://127.0.0.1:8080/sendMessage
 Content-Type: application/json
 
-{"id": 3}
+{
+  "text": "15676154335"
+}
 
-<> 2019-03-11T120552.200.json
+<> 2019-03-18T105010.200.json
 
 ###
 
-POST http://127.0.0.1:8080/school_guide_time
+POST http://127.0.0.1:8080/sendMessage
 Content-Type: application/json
 
-{"text": "院部5"}
+{
+  "text": "13405665741"
+}
 
-<> 2019-03-10T115956.200.json
+<> 2019-03-18T104811.200.json
 
 ###
 
-POST http://127.0.0.1:8080/school_guide_time
+POST http://127.0.0.1:8080/upload
 Content-Type: application/json
 
-{"text": "院部4"}
+{
+  "user_number": 13405665741,
+  "image_address": "test_address"
+}
 
-<> 2019-03-10T115952.200.json
+<> 2019-03-18T102631.200.json
 
 ###
 
-POST http://127.0.0.1:8080/school_guide_time
+POST http://127.0.0.1:8080/upload
 Content-Type: application/json
 
-{"text": "院部1"}
+{
+  "user_number": 13405665741,
+  "image_address": "test_address"
+}
 
-<> 2019-03-10T115947.200.json
+<> 2019-03-18T102425.200.json
 
 ###
 
-POST http://127.0.0.1:8080/school_guide_time
+POST http://127.0.0.1:8080/upload
 Content-Type: application/json
 
-{"text": "院部1"}
+{
+  "user_number": 13405665741,
+  "image_address": "test_address"
+}
 
-<> 2019-03-10T115545.200.json
+<> 2019-03-18T102101.200.json
 
 ###
 
-POST http://127.0.0.1:8080/school_guide_time
+POST http://127.0.0.1:8080/upload
 Content-Type: application/json
 
-{"text": "院部1"}
-
-<> 2019-03-10T115529.200.json
+{
+  "id": "",
+  "name": "沈超",
+  "phone_number": 13405665741,
+  "password": "aaaa",
+  "user_avatar": "aaa",
+  "user_school": "",
+  "user_college": "",
+  "user_name": "",
+  "user_id_card": "",
+  "user_dormitory": ""
+}
 
 ###
 
-POST http://127.0.0.1:8080/school_guide_time
+POST http://127.0.0.1:8080/upload
 Content-Type: application/json
 
-{"text": "院部1"}
-
-<> 2019-03-10T115428.200.json
+{
+  "id": "",
+  "name": "沈超",
+  "phone_number": 13405665741,
+  "password": "aaaa",
+  "user_avatar": "aaa",
+  "user_school": "",
+  "user_college": "",
+  "user_name": "",
+  "user_id_card": "",
+  "user_dormitory": ""
+}
 
 ###
 
-POST http://127.0.0.1:8080/school_guide_time
+POST http://127.0.0.1:8080/upload
 Content-Type: application/json
 
-{"text": "院部4"}
-
-<> 2019-03-10T115351.200.json
+{
+  "id": "",
+  "name": "沈超",
+  "phone_number": 13405665741,
+  "password": "aaaa",
+  "user_avatar": "aaa",
+  "user_school": "",
+  "user_college": "",
+  "user_name": "",
+  "user_id_card": "",
+  "user_dormitory": ""
+}
 
 ###
 
-POST http://127.0.0.1:8080/school_guide_time
+POST http://127.0.0.1:8080/upload
 Content-Type: application/json
 
-{"text": "院部1"}
+{"name": "沈超", "phone_number": 13405665741, "password": "aaaa", "user_avatar": "aaa", "user_school": "",
+"user_college": "", "user_name": "", "user_id_card": "", "user_dormitory": ""}
 
-<> 2019-03-10T115252.200.json
+<> 2019-03-18T100624.200.json
 
 ###
 
-POST http://127.0.0.1:8080/school_guide_time
+POST http://127.0.0.1:8080/upload
 Content-Type: application/json
 
-{"text": "院部1"}
-
-<> 2019-03-10T115248.200.json
+{"name": "沈超", "phone_number": 13405665741, "password": "aaaa", "user_avatar": "aaa", "user_school": "",
+"user_college": "", "user_name": "", "user_id_card": "", "user_dormitory": ""}
 
 ###
 
-POST http://127.0.0.1:8080/school_guide_time
+POST http://127.0.0.1:8080/upload
 Content-Type: application/json
 
-{"text": "院部1"}
+{"name": "沈超", "phone_number": 13405665741, "password": "", "user_avatar": "aaa", "user_school": "",
+"user_college": "", "user_name": "", "user_id_card": "", "user_dormitory": ""}
 
-<> 2019-03-10T115157.200.json
+<> 2019-03-18T100455.200.json
 
 ###
 
-POST http://127.0.0.1:8080/school_guide_time
+POST http://127.0.0.1:8080/upload
 Content-Type: application/json
 
-{"text": "院部1"}
+{"name": "沈超", "phone_number": 13405665741, "password": "", "user_avatar": "aaa"}
 
-<> 2019-03-10T114803.200.json
+<> 2019-03-18T100347.200.json
 
 ###
 
-POST http://127.0.0.1:8080/school_guide_time
+GET http://127.0.0.1:8080/upload
 Content-Type: application/json
 
-{"text": "院部1"}
-
-<> 2019-03-10T114445.200.json
+<> 2019-03-17T014324.200.json
 
 ###
 
-POST http://127.0.0.1:8080/login
+GET http://127.0.0.1:8080/upload
 Content-Type: application/json
 
-{"phone_number": 15676154335, "password": "123"}
-
-<> 2019-03-10T104218.200.json
+<> 2019-03-17T014108.200.json
 
 ###
 
-POST http://127.0.0.1:8080/login
+GET http://127.0.0.1:8080/upload
 Content-Type: application/json
 
-{"phone_number": 13405665741, "password": "aaaa"}
-
-<> 2019-03-10T104201.200.json
+<> 2019-03-17T012100.200.json
 
 ###
 
-POST http://127.0.0.1:8080/login
+GET http://127.0.0.1:8080/upload
 Content-Type: application/json
 
-{"phone_number": 13405665741, "password": "aaaa"}
+{"file": "aaa"}
+
+<> 2019-03-17T011953.200.json
 
 ###
 
-POST http://127.0.0.1:8080/login
+GET http://127.0.0.1:8080/upload
 Content-Type: application/json
 
-{"phone_number": 13405665741, "password": "aaaa"}
+{"file": "aaa"}
 
-<> 2019-03-10T035757.200.json
+<> 2019-03-17T011534.200.json
 
 ###
 
-POST http://127.0.0.1:8080/login
+GET http://127.0.0.1:8080/upload
 Content-Type: application/json
 
-{"phone_number": 111111561, "password": "aaaa"}
+{"file": "aaa"}
 
-<> 2019-03-10T035633.200.json
+<> 2019-03-17T011327.200.json
 
 ###
 
-POST http://127.0.0.1:8080/login
+GET http://127.0.0.1:8080/upload
 Content-Type: application/json
 
-{"phone_number": 111111561, "password": "aaaa"}
+{"file": "aaa"}
 
-<> 2019-03-10T032732.200.json
+<> 2019-03-17T011312.200.json
 
 ###
 
-POST http://127.0.0.1:8080/login
+GET http://127.0.0.1:8080/upload
 Content-Type: application/json
 
-{"phone_number": 111111561, "password": "aaaa"}
+{"file": "aaa"}
+
+<> 2019-03-17T011201.200.json
 
 ###
 
-POST http://127.0.0.1:8080/login
+GET http://127.0.0.1:8080/upload
 Content-Type: application/json
 
-{"phone_number": 111111561, "password": "aaaa"}
+{"file": "aaa"}
 
 ###
 
-POST http://127.0.0.1:8080/login
+GET http://127.0.0.1:8080/upload
 Content-Type: application/json
 
-{"phone_number": 13405665741, "password": "aaaa"}
-
-<> 2019-03-10T032627.200.json
+{"file": "aaa"}
 
 ###
 
-POST http://127.0.0.1:8080/register
+GET http://127.0.0.1:8080/upload
 Content-Type: application/json
 
-{"name": "不朽之城美女吧车厢内", "phone_number": 13405665741, "password": "aaaa"}
-
-<> 2019-03-10T032509.200.json
+{"file": "aaa"}
 
 ###
 
-POST http://127.0.0.1:8080/register
+GET http://127.0.0.1:8080/upload
 Content-Type: application/json
 
-{"name": "不朽之城美女吧车厢内", "phone_number": 111111561, "password": "aaaa"}
-
-<> 2019-03-10T032458.200.json
+{"file": "aaa"}
 
 ###
 
-POST http://127.0.0.1:8080/login
+GET http://127.0.0.1:8080/upload
 Content-Type: application/json
 
-{"phone_number": "14484", "password": "aaaa"}
-
-<> 2019-03-10T032348.200.json
+{"file": "aaa"}
 
 ###
 
-POST http://127.0.0.1:8080/login
+GET http://127.0.0.1:8080/upload
 Content-Type: application/json
 
-{"phone_number": "12d31651", "password": "aaaa"}
+{"file": "aaa"}
 
 ###
 
-POST http://127.0.0.1:8080/login
+GET http://127.0.0.1:8080/upload
 Content-Type: application/json
-
-{"phone_number": "12d31651", "password": "aaaa"}
 
 ###
 
-POST http://127.0.0.1:8080/login
+GET http://127.0.0.1:8080/upload
 Content-Type: application/json
-
-{"phone_number": "14815163211", "password": "123131"}
-
-<> 2019-03-10T032328.200.json
 
 ###
 
-POST http://{{host}}/login
+GET http://127.0.0.1:8080/upload
 Content-Type: application/json
-
-{"phone_number": "14815163211", "password": "123131"}
 
 ###
 
-POST http://127.0.0.1:8080/login
+GET http://{{host}}/upload
 Content-Type: application/json
-
-{"phone_number": "14815163211", "password": "aaaa"}
-
-<> 2019-03-10T032311.200.json
 
 ###
 
-POST http://{{host}}/login
+GET http://127.0.0.1:8080/upload
 Content-Type: application/json
-
-{"phone_number": "14815163211", "password": "aaaa"}
 
 ###
 
-POST http://127.0.0.1:8080/login
+GET http://127.0.0.1:8080/upload
 Content-Type: application/json
-
-{"phone_number": "15676154335", "password": "123"}
-
-<> 2019-03-10T032246.200.json
 
 ###
 
-POST http://127.0.0.1:8080/login
+GET http://127.0.0.1:8080/upload
 Content-Type: application/json
-
-{"phone_number": "15676154335", "password": "123"}
-
-<> 2019-03-10T032200.200.json
 
 ###
 
-POST http://127.0.0.1:8080/login
+GET http://127.0.0.1:8080/upload
 Content-Type: application/json
-
-{"phone_number": "13405665741", "password": "aaaa"}
-
-<> 2019-03-10T032135.200.json
 
 ###
 
-POST http://127.0.0.1:8080/login
+GET http://127.0.0.1:8080/upload
 Content-Type: application/json
-
-{"phone_number": "13405665741", "password": "aaaa"}
 
 ###
 
-POST http://127.0.0.1:8080/login
+GET http://127.0.0.1:8080/upload
 Content-Type: application/json
-
-{"phone_number": "13405665741", "password": "aaaa"}
 
 ###
 
-POST http://127.0.0.1:8080/login
+GET http://127.0.0.1:8080/upload
 Content-Type: application/json
-
-{"phone_number": 13405665741, "password": "aaaa"}
-
-<> 2019-03-10T031959.200.json
 
 ###
 
-POST http://127.0.0.1:8080/login
+GET http://127.0.0.1:8080/upload
 Content-Type: application/json
-
-{"phone_number": 13405665741, "password": "aaaa"}
 
 ###
 
-POST http://127.0.0.1:8080/schoolInfo
+GET http://127.0.0.1:8080/upload
 Content-Type: application/json
-
-{"id": 229}
-
-<> 2019-03-10T031801.200.json
 
 ###
 
-POST http://127.0.0.1:8080/schoolInfo
+GET http://127.0.0.1:8080/upload
 Content-Type: application/json
-
-{"id": 229}
-
-<> 2019-03-09T111419.200.json
 
 ###
 
-POST http://127.0.0.1:8080/schoolInfo
+GET http://127.0.0.1:8080/upload
 Content-Type: application/json
-
-{"id": 229}
 
 ###
 
-POST http://127.0.0.1:8080/schoolInfo
+GET http://127.0.0.1:8080/upload
 Content-Type: application/json
-
-{"int": 1}
 
 ###
 
-POST http://127.0.0.1:8080/schoolInfo
+GET http://127.0.0.1:8080/upload
 Content-Type: application/json
-
-{"id": 229}
-
-<> 2019-03-09T111206.200.json
 
 ###
 
-POST http://127.0.0.1:8080/schoolInfo
+GET http://127.0.0.1:8080/upload
 Content-Type: application/json
-
-{"id": 229}
 
 ###
 
-POST http://127.0.0.1:8080/schoolInfo
+GET http://127.0.0.1:8080/upload
 Content-Type: application/json
-
-{"id": 229}
 
 ###
 
-POST http://127.0.0.1:8080/schoolInfo
+GET http://127.0.0.1:8080/upload
 Content-Type: application/json
-
-{"id": 229}
 
 ###
 
-POST http://127.0.0.1:8080/schoolInfo
+GET http://127.0.0.1:8080/upload
 Content-Type: application/json
-
-{"id": 229}
 
 ###
 
-POST http://127.0.0.1:8080/schoolInfo
+GET http://127.0.0.1:8080/upload
 Content-Type: application/json
-
-{"id": 229}
 
 ###
 
-POST http://127.0.0.1:8080/schoolInfo
+GET http://127.0.0.1:8080/upload
 Content-Type: application/json
-
-{"id": 1}
-
-<> 2019-03-09T111038.200.json
 
 ###
 

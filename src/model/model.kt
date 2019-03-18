@@ -1,5 +1,7 @@
 package com.shen.model
 
+import java.io.File
+
 data class PandP(
     val phone_number: Long,
     val password: String
@@ -13,6 +15,11 @@ data class isSuccess(
 
 data class Id(
     val id: Int
+)
+
+data class Upload(
+    val user_number: Long,
+    val image_address: String
 )
 
 data class Content(

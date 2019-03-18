@@ -17,8 +17,6 @@ import util.DatabaseHelper
 
 
 object DatabaseFactory : DatabaseHelper {
-    private val gson: Gson = Gson()
-
     fun init(@NotNull table: List<Table>) {
         Database.connect(dbConnect())
         transaction {
@@ -108,10 +106,30 @@ object DatabaseFactory : DatabaseHelper {
         }
     }
 
-    override suspend fun update(table: Table, where: Any?, model: Any?) {
+    override suspend fun update(table: Table, where: Any?, model: Any?): isSuccess {
+        var returnContent = isSuccess(false)
         when (table) {
             is UsersTable -> {
-
+                val users = model as Users
+                transaction {
+                    try {
+                        table.update({ table.phone_number.eq(where as Long) }) {
+                            it[table.name] = users.name
+                            it[table.phone_number] = users.phone_number
+                            it[table.password] = users.password
+                            it[table.user_avatar] = users.user_avatar ?: ""
+                            it[table.user_school] = users.user_school ?: ""
+                            it[table.user_college] = users.user_college ?: ""
+                            it[table.user_name] = users.user_name ?: ""
+                            it[table.user_id_card] = users.user_id_card ?: ""
+                            it[table.user_dormitory] = users.user_dormitory ?: ""
+                        }
+                        returnContent = isSuccess(true)
+                    } catch (e: Exception) {
+                        e.printStackTrace()
+                        returnContent = isSuccess(isSuccess = false, errorReason = "update error")
+                    }
+                }
             }
             is SchoolInfoTable -> {
 
@@ -125,6 +143,7 @@ object DatabaseFactory : DatabaseHelper {
 
             }
         }
+        return returnContent
     }
 
     override suspend fun insert(table: Table, model: Any?): isSuccess {
@@ -134,22 +153,16 @@ object DatabaseFactory : DatabaseHelper {
                 dbSet {
                     try {
                         val users = model as Users
-                        val avatar = users.user_avatar ?: ""
-                        val school = users.user_school ?: ""
-                        val college = users.user_college ?: ""
-                        val nameReal = users.user_name ?: ""
-                        val idCard = users.user_id_card ?: ""
-                        val dormitory = users.user_dormitory ?: ""
                         table.insert {
                             it[phone_number] = users.phone_number
                             it[password] = users.password
                             it[name] = users.name
-                            it[user_avatar] = avatar
-                            it[user_school] = school
-                            it[user_college] = college
-                            it[user_name] = nameReal
-                            it[user_id_card] = idCard
-                            it[user_dormitory] = dormitory
+                            it[user_avatar] = users.user_avatar ?: ""
+                            it[user_school] = users.user_school ?: ""
+                            it[user_college] = users.user_college ?: ""
+                            it[user_name] = users.user_name ?: ""
+                            it[user_id_card] = users.user_id_card ?: ""
+                            it[user_dormitory] = users.user_dormitory ?: ""
                         }
                         insertCode = isSuccess(true)
                     } catch (e: Exception) {
@@ -160,15 +173,69 @@ object DatabaseFactory : DatabaseHelper {
             }
 
             is SchoolInfoTable -> {
-
+                transaction {
+                    try {
+                        val schoolInfo = model as SchoolInfo
+                        table.insert {
+                            it[school_name] = schoolInfo.school_name
+                            it[school_address] = schoolInfo.school_address
+                            it[school_introduce] = schoolInfo.school_introduce
+                            val list = listOf(
+                                school_image_0, school_image_1, school_image_2,
+                                school_image_3, school_image_4
+                            )
+                            schoolInfo.image_show_list.forEachIndexed { index, content ->
+                                it[list[index]] = content
+                            }
+                        }
+                        insertCode = isSuccess(true)
+                    } catch (e: Exception) {
+                        e.printStackTrace()
+                        insertCode = isSuccess(isSuccess = false, errorReason = e.toString())
+                    }
+                }
             }
 
             is SchoolGuideTimeTable -> {
+                transaction {
+                    try {
+                        val schoolGuideTime = model as SchoolGuideTime
+                        table.insert {
+                            it[school_id] = schoolGuideTime.school_id
+                            it[guide_college] = schoolGuideTime.guide_college
+                            it[guide_time_one] = schoolGuideTime.guide_time_one
+                            it[guide_time_two] = schoolGuideTime.guide_time_two
+                        }
+                        insertCode = isSuccess(true)
+                    } catch (e: Exception) {
+                        e.printStackTrace()
+                        insertCode = isSuccess(isSuccess = false, errorReason = e.toString())
+                    }
 
+                }
             }
 
             is SchoolDormitoryTable -> {
-
+                transaction {
+                    try {
+                        val schoolDormitory = model as SchoolDormitory
+                        table.insert {
+                            it[school_id] = schoolDormitory.school_id
+                            it[dormitory_id] = schoolDormitory.dormitory_id
+                            it[dormitory_name] = schoolDormitory.dormitory_name
+                            val list = listOf(
+                                dormitory_student_0, dormitory_student_1,
+                                dormitory_student_2, dormitory_student_3
+                            )
+                            schoolDormitory.dormitory_student_list.forEachIndexed { index, content ->
+                                it[list[index]] = content
+                            }
+                        }
+                    } catch (e: Exception) {
+                        e.printStackTrace()
+                        insertCode = isSuccess(isSuccess = false, errorReason = e.toString())
+                    }
+                }
             }
         }
         return insertCode
@@ -182,7 +249,7 @@ object DatabaseFactory : DatabaseHelper {
             is UsersTable -> {
                 contentList?.let {
                     it.forEach { user ->
-                        if (where == (user as Users).id) {
+                        if (where == (user as Users).phone_number) {
                             returnContent = user
                         }
                     }
