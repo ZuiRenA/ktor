@@ -47,60 +47,65 @@ object DatabaseFactory : DatabaseHelper {
                 }
             }
             is SchoolInfoTable -> {
-                try {
-                    InitSchoolInfo.schoolInfo.forEach { schoolInfo ->
-                        table.insert {
-                            it[school_id] = schoolInfo.school_id
-                            it[school_name] = schoolInfo.school_name
-                            it[school_address] = schoolInfo.school_address
-                            it[school_introduce] = schoolInfo.school_introduce
-                            val initList = listOf(
-                                school_image_0, school_image_1,
-                                school_image_2, school_image_3, school_image_4
-                            )
-                            schoolInfo.image_show_list.forEachIndexed { index, content ->
-                                it[initList[index]] = content
+                transaction {
+                    try {
+                        InitSchoolInfo.schoolInfo.forEach { schoolInfo ->
+                            table.update {
+                                it[school_id] = schoolInfo.school_id
+                                it[school_name] = schoolInfo.school_name
+                                it[school_address] = schoolInfo.school_address
+                                it[school_introduce] = schoolInfo.school_introduce
+                                val initList = listOf(
+                                    school_image_0, school_image_1,
+                                    school_image_2, school_image_3, school_image_4
+                                )
+                                schoolInfo.image_show_list.forEachIndexed { index, content ->
+                                    it[initList[index]] = content
+                                }
                             }
                         }
+                    } catch (e: Exception) {
+                        e.printStackTrace()
                     }
-                } catch (e: Exception) {
-                    e.printStackTrace()
                 }
             }
-
             is SchoolGuideTimeTable -> {
-                try {
-                    InitSchoolGuideTime.schoolGuideTime.forEach { schoolGuideTime ->
-                        table.insert {
-                            it[school_id] = schoolGuideTime.school_id
-                            it[guide_college] = schoolGuideTime.guide_college
-                            it[guide_time_one] = schoolGuideTime.guide_time_one
-                            it[guide_time_two] = schoolGuideTime.guide_time_two
-                        }
-                    }
-                } catch (e: Exception) {
-                    e.printStackTrace()
-                }
-            }
-
-            is SchoolDormitoryTable -> {
-                try {
-                    InitSchoolDormitory.schoolDormitory.forEach { schoolDormitory ->
-                        table.insert {
-                            it[school_id] = schoolDormitory.school_id
-                            it[dormitory_id] = schoolDormitory.dormitory_id
-                            it[dormitory_name] = schoolDormitory.dormitory_name
-                            val initList = listOf(
-                                dormitory_student_0, dormitory_student_1,
-                                dormitory_student_2, dormitory_student_3
-                            )
-                            schoolDormitory.dormitory_student_list.forEachIndexed { index, student ->
-                                it[initList[index]] = student
+                transaction {
+                    try {
+                        InitSchoolGuideTime.schoolGuideTime.forEach { schoolGuideTime ->
+                            table.update {
+                                it[school_id] = schoolGuideTime.school_id
+                                it[guide_college] = schoolGuideTime.guide_college
+                                it[guide_time_one] = schoolGuideTime.guide_time_one
+                                it[guide_time_two] = schoolGuideTime.guide_time_two
                             }
                         }
+                    } catch (e: Exception) {
+                        e.printStackTrace()
                     }
-                } catch (e: Exception) {
-                    e.printStackTrace()
+                }
+
+            }
+            is SchoolDormitoryTable -> {
+                transaction {
+                    try {
+                        InitSchoolDormitory.schoolDormitory.forEach { schoolDormitory ->
+                            table.update {
+                                it[school_id] = schoolDormitory.school_id
+                                it[dormitory_id] = schoolDormitory.dormitory_id
+                                it[dormitory_name] = schoolDormitory.dormitory_name
+                                val initList = listOf(
+                                    dormitory_student_0, dormitory_student_1,
+                                    dormitory_student_2, dormitory_student_3
+                                )
+                                schoolDormitory.dormitory_student_list.forEachIndexed { index, student ->
+                                    it[initList[index]] = student
+                                }
+                            }
+                        }
+                    } catch (e: Exception) {
+                        e.printStackTrace()
+                    }
                 }
             }
         }
@@ -285,7 +290,10 @@ object DatabaseFactory : DatabaseHelper {
                 }
             }
         }
-        return returnContent ?: isSuccess(false, errorReason = "select_info_error")
+        return if (returnContent != null)
+            isSuccess(isSuccess = true, respond = returnContent)
+        else
+            isSuccess(false, errorReason = "select_info_error")
     }
 
     override suspend fun selectAll(table: Table): List<Any>? {

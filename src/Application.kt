@@ -1,17 +1,29 @@
 package com.shen
 
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
 import com.shen.database.*
 import com.shen.model.*
 import com.shen.util.DatabaseUtil
 import io.ktor.application.Application
 import io.ktor.application.call
 import io.ktor.application.install
+import io.ktor.client.HttpClient
+import io.ktor.client.engine.android.Android
+import io.ktor.client.engine.apache.Apache
+import io.ktor.client.engine.okhttp.OkHttp
 import io.ktor.features.ContentNegotiation
 import io.ktor.gson.gson
 import io.ktor.request.receive
 import io.ktor.response.respond
+import io.ktor.response.respondText
+import io.ktor.routing.get
 import io.ktor.routing.post
+import io.ktor.routing.route
 import io.ktor.routing.routing
+import okhttp3.OkHttpClient
+import okhttp3.logging.HttpLoggingInterceptor
+import org.apache.http.HttpHost
 
 fun main(args: Array<String>): Unit = io.ktor.server.netty.EngineMain.main(args)
 
@@ -25,6 +37,21 @@ fun Application.module(testing: Boolean = false) {
         SchoolGuideTimeTable,
         SchoolDormitoryTable
     )
+    val client = HttpClient(engineFactory = Apache) {
+        engine {
+            followRedirects = true
+            socketTimeout = 10_000
+            connectTimeout = 10_000
+            connectionRequestTimeout = 20_000
+
+            customizeClient {
+                setProxy(HttpHost("127.0.0.1", 8080))
+                setMaxConnTotal(1000)
+                setMaxConnPerRoute(100)
+            }
+            customizeRequest {  }
+        }
+    }
 
     install(ContentNegotiation) {
         gson {
@@ -59,7 +86,6 @@ fun Application.module(testing: Boolean = false) {
                     call.respond(isSuccess(isSuccess = false, errorReason = "手机号错误"))
             }
         }
-
         post("/register") {
             val registerInfo = call.receive<Users>()
             val userList: List<Users>? = DatabaseFactory.selectAll(UsersTable) as List<Users>
@@ -79,25 +105,26 @@ fun Application.module(testing: Boolean = false) {
                     call.respond(DatabaseFactory.insert(UsersTable, registerInfo))
             }
         }
-
-        post("/schoolInfo") {
-            val id = call.receive<Id>()
-            call.respond(DatabaseFactory.select(SchoolInfoTable, id.id))
-        }
-
         post("/school_guide_time") {
             val content = call.receive<Content>()
             call.respond(DatabaseFactory.select(SchoolGuideTimeTable, content.text))
         }
-
         post("/school_dormitory") {
             val id = call.receive<Id>()
             call.respond(DatabaseFactory.select(SchoolDormitoryTable, id.id))
         }
-
         post("/upload") {
             val upload = call.receive<Upload>()
             call.respond(DatabaseUtil.uploadAvatar(upload))
+        }
+
+        get("/schoolInfo/{id}") {
+            val param = call.parameters["id"]!!
+            call.respond(DatabaseFactory.select(SchoolInfoTable, param.toInt()))
+        }
+
+        get("") {
+            call.respondText("HELLO WORLD!")
         }
     }
 }

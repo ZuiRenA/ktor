@@ -1,3 +1,277 @@
+GET http://127.0.0.1:8080/schoolInfo/1
+Content-Type: application/json
+
+<> 2019-04-07T032122.200.json
+
+###
+
+GET http://{{host}}/schoolInfo/1
+Content-Type: application/json
+
+###
+
+GET http://127.0.0.1:8080/schoolInfo/1
+Content-Type: application/json
+
+###
+
+GET http://127.0.0.1:8080/schoolInfo/1
+Content-Type: application/json
+
+<> 2019-03-20T033428.200.json
+
+###
+
+GET http://127.0.0.1:8080/schoolInfo/1
+Content-Type: application/json
+
+<> 2019-03-20T032400.200.json
+
+###
+
+GET http://127.0.0.1:8080/schoolInfo/1
+Content-Type: application/json
+
+<> 2019-03-20T032354.200.json
+
+###
+
+GET http://127.0.0.1:8080/schoolInfo/1
+Content-Type: application/json
+
+<> 2019-03-20T032111.200.json
+
+###
+
+GET http://127.0.0.1:8080/schoolInfo/1
+Content-Type: application/json
+
+<> 2019-03-20T032013.200.json
+
+###
+
+GET http://127.0.0.1:8080/schoolInfo/1
+Content-Type: application/json
+
+<> 2019-03-20T032006.200.json
+
+###
+
+GET http://127.0.0.1:8080/schoolInfo/1
+Content-Type: application/json
+
+<> 2019-03-20T022055.200.json
+
+###
+
+GET http://127.0.0.1:8080/schoolInfo/1
+Content-Type: application/json
+
+<> 2019-03-20T021905.200.json
+
+###
+
+GET http://127.0.0.1:8080/schoolInfo/2
+Content-Type: application/json
+
+<> 2019-03-20T021859.200.json
+
+###
+
+GET http://127.0.0.1:8080/schoolInfo/2
+Content-Type: application/json
+
+<> 2019-03-20T124435.200.json
+
+###
+
+GET http://127.0.0.1:8080/schoolInfo/1
+Content-Type: application/json
+
+<> 2019-03-20T124430.200.json
+
+###
+
+GET http://127.0.0.1:8080/schoolInfo/1
+Content-Type: application/json
+
+<> 2019-03-20T124017.200.json
+
+###
+
+GET http://127.0.0.1:8080/schoolInfo/1
+Content-Type: application/json
+
+<> 2019-03-20T123943.200.json
+
+###
+
+GET http://127.0.0.1:8080/schoolInfo/1
+Content-Type: application/json
+
+<> 2019-03-20T123835.200.json
+
+###
+
+GET http://127.0.0.1:8080/schoolInfo/1
+Content-Type: application/json
+
+{
+  "id": 1
+}
+
+<> 2019-03-20T123819.200.json
+
+###
+
+GET http://127.0.0.1:8080/schoolInfo/1
+Content-Type: application/json
+
+{
+  "id": 1
+}
+
+<> 2019-03-20T123733.200.json
+
+###
+
+GET http://127.0.0.1:8080/schoolInfo/1
+Content-Type: application/json
+
+{
+  "id": 1
+}
+
+<> 2019-03-20T123653.200.json
+
+###
+
+GET http://127.0.0.1:8080/schoolInfo/1
+Content-Type: application/json
+
+{
+  "id": 1
+}
+
+<> 2019-03-20T123552.200.json
+
+###
+
+GET http://127.0.0.1:8080/schoolInfo/1
+Content-Type: application/json
+
+{
+  "id": 1
+}
+
+###
+
+POST http://127.0.0.1:8080/schoolInfo/{1}
+Content-Type: application/json
+
+{
+  "id": 1
+}
+
+###
+
+POST http://192.168.7.103:8080/schoolInfo
+Content-Type: application/json
+
+{
+  "id": 1
+}
+
+<> 2019-03-19T115900.200.json
+
+###
+
+POST http://192.168.7.103:8080/schoolInfo
+Content-Type: application/json
+
+{
+  "id": 1
+}
+
+<> 2019-03-19T115830.200.json
+
+###
+
+POST http://192.168.7.103:8080/schoolInfo
+Content-Type: application/json
+
+{
+  "id": 1
+}
+
+<> 2019-03-19T115811.200.json
+
+###
+
+POST http://192.168.7.103:8080/schoolInfo
+Content-Type: application/json
+
+{
+  "id": 1
+}
+
+<> 2019-03-19T115656.200.json
+
+###
+
+POST http://192.168.7.103:8080/schoolInfo
+Content-Type: application/json
+
+{
+  "id": 1
+}
+
+<> 2019-03-19T115633.200.json
+
+###
+
+POST http://192.168.7.103:8080/schoolInfo
+Content-Type: application/json
+
+{
+  "id": 1
+}
+
+<> 2019-03-19T115256.200.json
+
+###
+
+POST http://127.0.0.1:8080/schoolInfo
+Content-Type: application/json
+
+{
+  "id": 1
+}
+
+<> 2019-03-19T115105.200.json
+
+###
+
+POST http://127.0.0.1:8080/schoolInfo
+Content-Type: application/json
+
+{
+  "id": 1
+}
+
+<> 2019-03-19T114144.200.json
+
+###
+
+POST http://127.0.0.1:8080/sendMessage
+Content-Type: application/json
+
+{
+  "text": "15676154335"
+}
+
+###
+
 POST http://127.0.0.1:8080/sendMessage
 Content-Type: application/json
 
@@ -194,190 +468,6 @@ Content-Type: application/json
 {"file": "aaa"}
 
 <> 2019-03-17T011534.200.json
-
-###
-
-GET http://127.0.0.1:8080/upload
-Content-Type: application/json
-
-{"file": "aaa"}
-
-<> 2019-03-17T011327.200.json
-
-###
-
-GET http://127.0.0.1:8080/upload
-Content-Type: application/json
-
-{"file": "aaa"}
-
-<> 2019-03-17T011312.200.json
-
-###
-
-GET http://127.0.0.1:8080/upload
-Content-Type: application/json
-
-{"file": "aaa"}
-
-<> 2019-03-17T011201.200.json
-
-###
-
-GET http://127.0.0.1:8080/upload
-Content-Type: application/json
-
-{"file": "aaa"}
-
-###
-
-GET http://127.0.0.1:8080/upload
-Content-Type: application/json
-
-{"file": "aaa"}
-
-###
-
-GET http://127.0.0.1:8080/upload
-Content-Type: application/json
-
-{"file": "aaa"}
-
-###
-
-GET http://127.0.0.1:8080/upload
-Content-Type: application/json
-
-{"file": "aaa"}
-
-###
-
-GET http://127.0.0.1:8080/upload
-Content-Type: application/json
-
-{"file": "aaa"}
-
-###
-
-GET http://127.0.0.1:8080/upload
-Content-Type: application/json
-
-{"file": "aaa"}
-
-###
-
-GET http://127.0.0.1:8080/upload
-Content-Type: application/json
-
-###
-
-GET http://127.0.0.1:8080/upload
-Content-Type: application/json
-
-###
-
-GET http://127.0.0.1:8080/upload
-Content-Type: application/json
-
-###
-
-GET http://{{host}}/upload
-Content-Type: application/json
-
-###
-
-GET http://127.0.0.1:8080/upload
-Content-Type: application/json
-
-###
-
-GET http://127.0.0.1:8080/upload
-Content-Type: application/json
-
-###
-
-GET http://127.0.0.1:8080/upload
-Content-Type: application/json
-
-###
-
-GET http://127.0.0.1:8080/upload
-Content-Type: application/json
-
-###
-
-GET http://127.0.0.1:8080/upload
-Content-Type: application/json
-
-###
-
-GET http://127.0.0.1:8080/upload
-Content-Type: application/json
-
-###
-
-GET http://127.0.0.1:8080/upload
-Content-Type: application/json
-
-###
-
-GET http://127.0.0.1:8080/upload
-Content-Type: application/json
-
-###
-
-GET http://127.0.0.1:8080/upload
-Content-Type: application/json
-
-###
-
-GET http://127.0.0.1:8080/upload
-Content-Type: application/json
-
-###
-
-GET http://127.0.0.1:8080/upload
-Content-Type: application/json
-
-###
-
-GET http://127.0.0.1:8080/upload
-Content-Type: application/json
-
-###
-
-GET http://127.0.0.1:8080/upload
-Content-Type: application/json
-
-###
-
-GET http://127.0.0.1:8080/upload
-Content-Type: application/json
-
-###
-
-GET http://127.0.0.1:8080/upload
-Content-Type: application/json
-
-###
-
-GET http://127.0.0.1:8080/upload
-Content-Type: application/json
-
-###
-
-GET http://127.0.0.1:8080/upload
-Content-Type: application/json
-
-###
-
-GET http://127.0.0.1:8080/upload
-Content-Type: application/json
-
-###
-
-GET http://127.0.0.1:8080/upload
-Content-Type: application/json
 
 ###
 

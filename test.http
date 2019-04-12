@@ -1,9 +1,5 @@
-POST {{host}}/sendMessage
+GET  {{host}}/schoolInfo/1
 Content-Type: application/json
-
-{
-  "text": "15676154335"
-}
 
 ###
 
