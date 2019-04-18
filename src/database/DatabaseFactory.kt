@@ -50,7 +50,7 @@ object DatabaseFactory : DatabaseHelper {
                 transaction {
                     try {
                         InitSchoolInfo.schoolInfo.forEach { schoolInfo ->
-                            table.update {
+                            table.insert {
                                 it[school_id] = schoolInfo.school_id
                                 it[school_name] = schoolInfo.school_name
                                 it[school_address] = schoolInfo.school_address
@@ -73,7 +73,7 @@ object DatabaseFactory : DatabaseHelper {
                 transaction {
                     try {
                         InitSchoolGuideTime.schoolGuideTime.forEach { schoolGuideTime ->
-                            table.update {
+                            table.insert {
                                 it[school_id] = schoolGuideTime.school_id
                                 it[guide_college] = schoolGuideTime.guide_college
                                 it[guide_time_one] = schoolGuideTime.guide_time_one
@@ -90,7 +90,7 @@ object DatabaseFactory : DatabaseHelper {
                 transaction {
                     try {
                         InitSchoolDormitory.schoolDormitory.forEach { schoolDormitory ->
-                            table.update {
+                            table.insert {
                                 it[school_id] = schoolDormitory.school_id
                                 it[dormitory_id] = schoolDormitory.dormitory_id
                                 it[dormitory_name] = schoolDormitory.dormitory_name
@@ -129,7 +129,7 @@ object DatabaseFactory : DatabaseHelper {
                             it[table.user_id_card] = users.user_id_card ?: ""
                             it[table.user_dormitory] = users.user_dormitory ?: ""
                         }
-                        returnContent = isSuccess(true)
+                        returnContent = isSuccess(true, users)
                     } catch (e: Exception) {
                         e.printStackTrace()
                         returnContent = isSuccess(isSuccess = false, errorReason = "update error")
@@ -273,7 +273,7 @@ object DatabaseFactory : DatabaseHelper {
             is SchoolGuideTimeTable -> {
                 contentList?.let {
                     it.forEach { guideTime ->
-                        if (where == (guideTime as SchoolGuideTime).guide_college) {
+                        if (where == (guideTime as SchoolGuideTime).school_id) {
                             returnContent = guideTime
                         }
                     }

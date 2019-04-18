@@ -11,7 +11,7 @@ open class UsersInfo : Table() {
     //密码
     val password = varchar("password", 255)
     //用户头像
-    val user_avatar = varchar("user_avatar", 255)
+    val user_avatar = varchar("user_avatar", 500)
     //用户学校
     val user_school = varchar("user_school", 255)
     //用户学院
@@ -39,7 +39,7 @@ open class SchoolInfo : Table() {
 
 open class SchoolGuideTime : Table() {
     val school_id = (integer("school_id") references SchoolInfoTable.school_id).primaryKey().nullable()
-    val guide_college = varchar("guide_college", 255)
+    val guide_college = varchar("guide_college", 255).uniqueIndex()
     val guide_time_one = varchar("guide_time_one", 255)
     val guide_time_two = varchar("guide_time_two", 255)
 }

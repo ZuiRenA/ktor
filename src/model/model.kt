@@ -60,3 +60,8 @@ data class SchoolDormitory(
     val dormitory_name: String,
     val dormitory_student_list: List<String>
 )
+
+data class School(
+    val school_id: Int,
+    val school_name: String
+)

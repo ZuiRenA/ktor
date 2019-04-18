@@ -1,7 +1,5 @@
 package com.shen
 
-import com.google.gson.Gson
-import com.google.gson.reflect.TypeToken
 import com.shen.database.*
 import com.shen.model.*
 import com.shen.util.DatabaseUtil
@@ -9,21 +7,16 @@ import io.ktor.application.Application
 import io.ktor.application.call
 import io.ktor.application.install
 import io.ktor.client.HttpClient
-import io.ktor.client.engine.android.Android
 import io.ktor.client.engine.apache.Apache
-import io.ktor.client.engine.okhttp.OkHttp
 import io.ktor.features.ContentNegotiation
 import io.ktor.gson.gson
 import io.ktor.request.receive
 import io.ktor.response.respond
-import io.ktor.response.respondText
 import io.ktor.routing.get
 import io.ktor.routing.post
-import io.ktor.routing.route
 import io.ktor.routing.routing
-import okhttp3.OkHttpClient
-import okhttp3.logging.HttpLoggingInterceptor
 import org.apache.http.HttpHost
+import sun.rmi.runtime.Log
 
 fun main(args: Array<String>): Unit = io.ktor.server.netty.EngineMain.main(args)
 
@@ -101,8 +94,11 @@ fun Application.module(testing: Boolean = false) {
                 }
                 if (hasPhoneNumber)
                     call.respond(isSuccess(isSuccess = false, errorReason = "手机号已存在"))
-                else
-                    call.respond(DatabaseFactory.insert(UsersTable, registerInfo))
+                else {
+                    if (DatabaseFactory.insert(UsersTable, registerInfo).isSuccess) {
+                        call.respond(DatabaseFactory.select(UsersTable, registerInfo.phone_number))
+                    }
+                }
             }
         }
         post("/school_guide_time") {
@@ -113,9 +109,9 @@ fun Application.module(testing: Boolean = false) {
             val id = call.receive<Id>()
             call.respond(DatabaseFactory.select(SchoolDormitoryTable, id.id))
         }
-        post("/upload") {
-            val upload = call.receive<Upload>()
-            call.respond(DatabaseUtil.uploadAvatar(upload))
+        post("/personData") {
+            val users = call.receive<Users>()
+            call.respond(DatabaseUtil.uploadPersonData(users))
         }
 
         get("/schoolInfo/{id}") {
@@ -123,8 +119,13 @@ fun Application.module(testing: Boolean = false) {
             call.respond(DatabaseFactory.select(SchoolInfoTable, param.toInt()))
         }
 
-        get("") {
-            call.respondText("HELLO WORLD!")
+        get("school") {
+            call.respond(DatabaseUtil.selectAllSchool())
+        }
+
+        get("college/{id}") {
+            val param = call.parameters["id"]!!
+            call.respond(DatabaseUtil.selectAllCollege(param.toInt()))
         }
     }
 }
