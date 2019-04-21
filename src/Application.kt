@@ -113,19 +113,24 @@ fun Application.module(testing: Boolean = false) {
             val users = call.receive<Users>()
             call.respond(DatabaseUtil.uploadPersonData(users))
         }
-
         get("/schoolInfo/{id}") {
             val param = call.parameters["id"]!!
             call.respond(DatabaseFactory.select(SchoolInfoTable, param.toInt()))
         }
-
-        get("school") {
+        get("/school") {
             call.respond(DatabaseUtil.selectAllSchool())
         }
-
-        get("college/{id}") {
+        get("/college/{id}") {
             val param = call.parameters["id"]!!
             call.respond(DatabaseUtil.selectAllCollege(param.toInt()))
+        }
+        post("/upload/letter") {
+            val letter = call.receive<Letter>()
+            call.respond(DatabaseUtil.uploadCALetter(letter))
+        }
+        get("/guideTime/{id}") {
+            val param = call.parameters["id"]!!
+            call.respond(DatabaseUtil.selectGuideTime(param.toInt()))
         }
     }
 }

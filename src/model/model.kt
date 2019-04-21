@@ -36,7 +36,8 @@ data class Users(
     val user_college: String? = null,
     val user_name: String? = null,
     val user_id_card: String? = null,
-    val user_dormitory: String? = null
+    val user_dormitory: String? = null,
+    val user_letter: String? = null
 )
 
 data class SchoolInfo(
@@ -64,4 +65,9 @@ data class SchoolDormitory(
 data class School(
     val school_id: Int,
     val school_name: String
+)
+
+data class Letter(
+    val phone_number: Long,
+    val uri: String
 )

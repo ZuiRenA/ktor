@@ -41,6 +41,7 @@ object DatabaseFactory : DatabaseHelper {
                         it[user_name] = "user_name"
                         it[user_id_card] = "id_card"
                         it[user_dormitory] = "dormitory"
+                        it[user_letter] = "sasdhbksad"
                     }
                 } catch (e: Exception) {
                     e.printStackTrace()
@@ -128,6 +129,7 @@ object DatabaseFactory : DatabaseHelper {
                             it[table.user_name] = users.user_name ?: ""
                             it[table.user_id_card] = users.user_id_card ?: ""
                             it[table.user_dormitory] = users.user_dormitory ?: ""
+                            it[table.user_letter] = users.user_letter ?: ""
                         }
                         returnContent = isSuccess(true, users)
                     } catch (e: Exception) {
@@ -168,6 +170,7 @@ object DatabaseFactory : DatabaseHelper {
                             it[user_name] = users.user_name ?: ""
                             it[user_id_card] = users.user_id_card ?: ""
                             it[user_dormitory] = users.user_dormitory ?: ""
+                            it[user_letter] = users.user_letter ?: ""
                         }
                         insertCode = isSuccess(true)
                     } catch (e: Exception) {
@@ -383,7 +386,8 @@ object DatabaseFactory : DatabaseHelper {
             user_college = row[UsersTable.user_college],
             user_name = row[UsersTable.user_name],
             user_id_card = row[UsersTable.user_id_card],
-            user_dormitory = row[UsersTable.user_dormitory]
+            user_dormitory = row[UsersTable.user_dormitory],
+            user_letter = row[UsersTable.user_letter]
         )
 
 
@@ -400,7 +404,7 @@ object DatabaseFactory : DatabaseHelper {
         return HikariDataSource(hikariConfig)
     }
 
-    suspend fun <T> dbSet(
+    private suspend fun <T> dbSet(
         block: () -> T
     ): T =
         withContext(Dispatchers.IO) {

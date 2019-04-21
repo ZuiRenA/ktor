@@ -22,6 +22,8 @@ open class UsersInfo : Table() {
     val user_id_card = varchar("user_id_card", 255)
     //用户宿舍
     val user_dormitory = varchar("user_dormitory", 255)
+    //用户录取通知书
+    val user_letter = varchar("user_letter", 500)
 }
 
 open class SchoolInfo : Table() {
