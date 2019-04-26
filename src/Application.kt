@@ -2,6 +2,7 @@ package com.shen
 
 import com.shen.database.*
 import com.shen.model.*
+import com.shen.network.MessageUtil
 import com.shen.util.DatabaseUtil
 import io.ktor.application.Application
 import io.ktor.application.call
@@ -131,6 +132,10 @@ fun Application.module(testing: Boolean = false) {
         get("/guideTime/{id}") {
             val param = call.parameters["id"]!!
             call.respond(DatabaseUtil.selectGuideTime(param.toInt()))
+        }
+        get("/message/{phone}") {
+            val phone = call.parameters["phone"]
+            call.respond(MessageUtil(phone).sendMessage())
         }
     }
 }

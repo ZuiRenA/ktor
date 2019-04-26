@@ -1,4 +1,4 @@
-GET  {{host}}/schoolInfo/1
+GET  {{host}}/message/13405665741
 Content-Type: application/json
 
 ###
