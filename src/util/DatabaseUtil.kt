@@ -96,4 +96,28 @@ object DatabaseUtil {
         else
             isSuccess(true, collegeList)
     }
+
+
+    suspend fun changePassword(password: Password): isSuccess {
+        val content = DatabaseFactory.select(UsersTable, password.phone_number)
+        return if ((content as isSuccess).isSuccess) {
+            val baseUser = content.respond as Users
+            val uploadUsers = Users(
+                id = baseUser.id,
+                name = baseUser.name,
+                phone_number = baseUser.phone_number,
+                password = password.password,
+                user_avatar = baseUser.user_avatar,
+                user_school = baseUser.user_school ?: baseUser.user_school,
+                user_college = baseUser.user_college ?: baseUser.user_college,
+                user_name = baseUser.user_name ?: baseUser.user_name,
+                user_id_card = baseUser.user_id_card ?: baseUser.user_id_card,
+                user_dormitory = baseUser.user_dormitory,
+                user_letter = baseUser.user_letter
+            )
+            DatabaseFactory.update(UsersTable, password.phone_number, uploadUsers)
+        } else {
+            isSuccess(false, "phone_number can not find")
+        }
+    }
 }

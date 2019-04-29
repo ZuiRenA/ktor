@@ -71,3 +71,8 @@ data class Letter(
     val phone_number: Long,
     val uri: String
 )
+
+data class Password(
+    val phone_number: Long,
+    val password: String
+)

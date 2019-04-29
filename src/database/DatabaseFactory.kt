@@ -1,6 +1,5 @@
 package com.shen.database
 
-import com.google.gson.Gson
 import com.shen.model.*
 import com.shen.model.SchoolDormitory
 import com.shen.model.SchoolGuideTime

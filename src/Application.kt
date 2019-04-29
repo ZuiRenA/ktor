@@ -137,6 +137,10 @@ fun Application.module(testing: Boolean = false) {
             val phone = call.parameters["phone"]
             call.respond(MessageUtil(phone).sendMessage())
         }
+        post("/password") {
+            val password = call.receive<Password>()
+            call.respond(DatabaseUtil.changePassword(password = password))
+        }
     }
 }
 
