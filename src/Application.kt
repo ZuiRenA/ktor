@@ -141,6 +141,11 @@ fun Application.module(testing: Boolean = false) {
             val password = call.receive<Password>()
             call.respond(DatabaseUtil.changePassword(password = password))
         }
+
+        get("/dormitory/{id}") {
+            val id = call.parameters["id"]
+            call.respond(DatabaseUtil.selectDormitory(id?.toInt()))
+        }
     }
 }
 

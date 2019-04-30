@@ -1,4 +1,4 @@
-GET  {{host}}/message/13405665741
+GET  {{host}}//dormitory/1
 Content-Type: application/json
 
 ###

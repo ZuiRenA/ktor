@@ -1,3 +1,10 @@
+GET http://127.0.0.1:8080/dormitory/1
+Content-Type: application/json
+
+<> 2019-04-30T092533.200.json
+
+###
+
 GET http://127.0.0.1:8080/message/13405665741
 Content-Type: application/json
 
@@ -446,16 +453,6 @@ Content-Type: application/json
 
 {"name": "沈超", "phone_number": 13405665741, "password": "aaaa", "user_avatar": "aaa", "user_school": "",
 "user_college": "", "user_name": "", "user_id_card": "", "user_dormitory": ""}
-
-###
-
-POST http://127.0.0.1:8080/upload
-Content-Type: application/json
-
-{"name": "沈超", "phone_number": 13405665741, "password": "", "user_avatar": "aaa", "user_school": "",
-"user_college": "", "user_name": "", "user_id_card": "", "user_dormitory": ""}
-
-<> 2019-03-18T100455.200.json
 
 ###
 

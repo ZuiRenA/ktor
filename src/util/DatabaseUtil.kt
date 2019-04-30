@@ -1,10 +1,10 @@
 package com.shen.util
 
-import com.shen.database.DatabaseFactory
-import com.shen.database.SchoolGuideTimeTable
-import com.shen.database.SchoolInfoTable
-import com.shen.database.UsersTable
+import com.shen.database.*
 import com.shen.model.*
+import com.shen.model.SchoolDormitory
+import com.shen.model.SchoolGuideTime
+import com.shen.model.SchoolInfo
 import java.lang.Exception
 
 object DatabaseUtil {
@@ -97,7 +97,6 @@ object DatabaseUtil {
             isSuccess(true, collegeList)
     }
 
-
     suspend fun changePassword(password: Password): isSuccess {
         val content = DatabaseFactory.select(UsersTable, password.phone_number)
         return if ((content as isSuccess).isSuccess) {
@@ -119,5 +118,18 @@ object DatabaseUtil {
         } else {
             isSuccess(false, "phone_number can not find")
         }
+    }
+
+    suspend fun selectDormitory(schoolId: Int?): isSuccess {
+        val guideTimeList = DatabaseFactory.selectAll(SchoolDormitoryTable) as List<SchoolDormitory>
+        val collegeList = mutableListOf<SchoolDormitory>()
+        guideTimeList.forEach {
+            if (it.school_id == schoolId)
+                collegeList.add(it)
+        }
+        return if (collegeList.isEmpty())
+            isSuccess(false, errorReason = "查询不到学校信息")
+        else
+            isSuccess(true, collegeList)
     }
 }
