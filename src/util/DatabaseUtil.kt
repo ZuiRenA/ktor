@@ -134,8 +134,28 @@ object DatabaseUtil {
     }
 
     suspend fun studentSelectDor(selectDor: SelectDor):isSuccess {
-        val useInfo = (DatabaseFactory.select(UsersTable, selectDor.phone_number) as isSuccess).respond as Users
-        val temp = SelectOption(useInfo.name, selectDor.id, selectDor.index)
-        return DatabaseFactory.update(SchoolDormitoryTable, temp.id, temp)
+        val userInfo = (DatabaseFactory.select(UsersTable, selectDor.phone_number) as isSuccess).respond as Users
+        val temp = SelectOption(userInfo.name, selectDor.id, selectDor.index)
+        val result = DatabaseFactory.update(SchoolDormitoryTable, temp.id, temp)
+        if (result.isSuccess) {
+            val name = DatabaseFactory.select(SchoolDormitoryTable, temp.id) as isSuccess
+            val uploadUsers = Users(
+                id = userInfo.id,
+                name = userInfo.name,
+                phone_number = userInfo.phone_number,
+                password = userInfo.password,
+                user_avatar = userInfo.user_avatar,
+                user_school = userInfo.user_school,
+                user_college = userInfo.user_college,
+                user_name = userInfo.user_name,
+                user_id_card = userInfo.user_id_card,
+                user_dormitory = (name.respond as SchoolDormitory).dormitory_name,
+                user_letter = userInfo.user_letter
+            )
+
+            return DatabaseFactory.update(UsersTable, selectDor.phone_number, uploadUsers)
+        }
+
+        return isSuccess(false, "选择宿舍失败")
     }
 }
