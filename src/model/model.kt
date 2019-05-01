@@ -76,3 +76,15 @@ data class Password(
     val phone_number: Long,
     val password: String
 )
+
+data class SelectDor(
+    val phone_number: Long,
+    val id: Int,
+    val index: Int
+)
+
+data class SelectOption(
+    val name: String,
+    val id: Int,
+    val index: Int
+)

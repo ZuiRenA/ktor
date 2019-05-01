@@ -17,7 +17,6 @@ import io.ktor.routing.get
 import io.ktor.routing.post
 import io.ktor.routing.routing
 import org.apache.http.HttpHost
-import sun.rmi.runtime.Log
 
 fun main(args: Array<String>): Unit = io.ktor.server.netty.EngineMain.main(args)
 
@@ -145,6 +144,11 @@ fun Application.module(testing: Boolean = false) {
         get("/dormitory/{id}") {
             val id = call.parameters["id"]
             call.respond(DatabaseUtil.selectDormitory(id?.toInt()))
+        }
+
+        post("/select/dormitory") {
+            val selectDor = call.receive<SelectDor>()
+            call.respond(DatabaseUtil.studentSelectDor(selectDor))
         }
     }
 }

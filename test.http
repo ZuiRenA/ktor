@@ -1,5 +1,11 @@
-GET  {{host}}//dormitory/1
+POST  {{host}}/select/dormitory
 Content-Type: application/json
+
+{
+  "phone_number": 13405665741,
+  "id": 0,
+  "index": 3
+}
 
 ###
 

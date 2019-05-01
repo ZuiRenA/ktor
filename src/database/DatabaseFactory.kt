@@ -146,7 +146,22 @@ object DatabaseFactory : DatabaseHelper {
             }
 
             is SchoolDormitoryTable -> {
-
+                val temp = model as SelectOption
+                transaction {
+                    try {
+                        table.update({ table.dormitory_id.eq(where as Int) }) {
+                            val list = listOf(
+                                dormitory_student_0, dormitory_student_1,
+                                dormitory_student_2, dormitory_student_3
+                            )
+                            it[list[temp.index]] = temp.name
+                            returnContent = isSuccess(true, "修改成功")
+                        }
+                    } catch (e: Exception) {
+                        e.printStackTrace()
+                        returnContent = isSuccess(true, errorReason = "update error")
+                    }
+                }
             }
         }
         return returnContent

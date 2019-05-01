@@ -132,4 +132,10 @@ object DatabaseUtil {
         else
             isSuccess(true, collegeList)
     }
+
+    suspend fun studentSelectDor(selectDor: SelectDor):isSuccess {
+        val useInfo = (DatabaseFactory.select(UsersTable, selectDor.phone_number) as isSuccess).respond as Users
+        val temp = SelectOption(useInfo.name, selectDor.id, selectDor.index)
+        return DatabaseFactory.update(SchoolDormitoryTable, temp.id, temp)
+    }
 }
