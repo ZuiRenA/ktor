@@ -23,7 +23,8 @@ object DatabaseUtil {
                 user_name = users.user_name ?: baseUser.user_name,
                 user_id_card = users.user_id_card ?: baseUser.user_id_card,
                 user_dormitory = baseUser.user_dormitory,
-                user_letter = baseUser.user_letter
+                user_letter = baseUser.user_letter,
+                user_permission = baseUser.user_permission
             )
             DatabaseFactory.update(UsersTable, users.phone_number, uploadUsers)
         } else {
@@ -76,7 +77,8 @@ object DatabaseUtil {
                 user_name = baseUser.user_name ?: baseUser.user_name,
                 user_id_card = baseUser.user_id_card ?: baseUser.user_id_card,
                 user_dormitory = baseUser.user_dormitory,
-                user_letter = letter.uri
+                user_letter = letter.uri,
+                user_permission = baseUser.user_permission
             )
             DatabaseFactory.update(UsersTable, letter.phone_number, uploadUsers)
         } else {

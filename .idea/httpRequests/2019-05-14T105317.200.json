@@ -1,0 +1,17 @@
+{
+  "isSuccess": true,
+  "respond": {
+    "id": 1,
+    "name": "昵称1",
+    "phone_number": 13405665741,
+    "password": "aaaa",
+    "user_avatar": "http://pic34.nipic.com/20131104/13264764_101028322111_2.jpg",
+    "user_school": "南宁学院",
+    "user_college": "高博软件学院",
+    "user_name": "沈超1",
+    "user_id_card": "320583199707261612",
+    "user_dormitory": "100",
+    "user_letter": "yes"
+  },
+  "errorReason": ""
+}

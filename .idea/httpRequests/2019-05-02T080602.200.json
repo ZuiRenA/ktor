@@ -1,0 +1,17 @@
+{
+  "isSuccess": true,
+  "respond": {
+    "id": 1,
+    "name": "name",
+    "phone_number": 13405665741,
+    "password": "aaaa",
+    "user_avatar": "avatar",
+    "user_school": "school",
+    "user_college": "college",
+    "user_name": "user_name",
+    "user_id_card": "id_card",
+    "user_dormitory": "100",
+    "user_letter": "sasdhbksad"
+  },
+  "errorReason": ""
+}

@@ -10,4 +10,5 @@ interface DatabaseHelper {
     suspend fun insert(@NotNull table: Table, model: Any? = null): isSuccess
     suspend fun select(@NotNull table: Table, where: Any): Any
     suspend fun selectAll(@NotNull table: Table): List<Any>?
+    suspend fun delete(table: Table, where: Any): isSuccess
 }

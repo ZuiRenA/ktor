@@ -16,6 +16,7 @@ import util.DatabaseHelper
 
 
 object DatabaseFactory : DatabaseHelper {
+
     fun init(@NotNull table: List<Table>) {
         Database.connect(dbConnect())
         transaction {
@@ -30,17 +31,20 @@ object DatabaseFactory : DatabaseHelper {
         when (table) {
             is UsersTable -> {
                 try {
-                    table.insert {
-                        it[phone_number] = 13405665741
-                        it[password] = "aaaa"
-                        it[name] = "name"
-                        it[user_avatar] = "avatar"
-                        it[user_school] = "school"
-                        it[user_college] = "college"
-                        it[user_name] = "user_name"
-                        it[user_id_card] = "id_card"
-                        it[user_dormitory] = "dormitory"
-                        it[user_letter] = "sasdhbksad"
+                    InitUserInfo.usersList.forEach { users ->
+                        table.insert {
+                            it[name] = users.name
+                            it[phone_number] = users.phone_number
+                            it[password] = users.password
+                            it[user_avatar] = users.user_avatar ?: ""
+                            it[user_school] = users.user_school ?: ""
+                            it[user_college] = users.user_college ?: ""
+                            it[user_name] = users.user_name ?: ""
+                            it[user_id_card] = users.user_id_card ?: ""
+                            it[user_dormitory] = users.user_dormitory ?: ""
+                            it[user_letter] = users.user_letter ?: ""
+                            it[user_permission] = users.user_permission ?: "false"
+                        }
                     }
                 } catch (e: Exception) {
                     e.printStackTrace()
@@ -111,6 +115,11 @@ object DatabaseFactory : DatabaseHelper {
         }
     }
 
+    override suspend fun delete(table: Table, where: Any): isSuccess {
+
+        return isSuccess(true)
+    }
+
     override suspend fun update(table: Table, where: Any?, model: Any?): isSuccess {
         var returnContent = isSuccess(false)
         when (table) {
@@ -129,6 +138,7 @@ object DatabaseFactory : DatabaseHelper {
                             it[table.user_id_card] = users.user_id_card ?: ""
                             it[table.user_dormitory] = users.user_dormitory ?: ""
                             it[table.user_letter] = users.user_letter ?: ""
+                            it[table.user_permission] = users.user_permission ?: "false"
                         }
                         returnContent = isSuccess(true, users)
                     } catch (e: Exception) {
@@ -155,7 +165,8 @@ object DatabaseFactory : DatabaseHelper {
                                 dormitory_student_2, dormitory_student_3
                             )
                             it[list[temp.index]] = temp.name
-                            returnContent = isSuccess(true, "修改成功")
+
+                            returnContent = isSuccess(true)
                         }
                     } catch (e: Exception) {
                         e.printStackTrace()
@@ -185,6 +196,7 @@ object DatabaseFactory : DatabaseHelper {
                             it[user_id_card] = users.user_id_card ?: ""
                             it[user_dormitory] = users.user_dormitory ?: ""
                             it[user_letter] = users.user_letter ?: ""
+                            it[user_permission] = users.user_permission ?: "false"
                         }
                         insertCode = isSuccess(true)
                     } catch (e: Exception) {
@@ -401,7 +413,8 @@ object DatabaseFactory : DatabaseHelper {
             user_name = row[UsersTable.user_name],
             user_id_card = row[UsersTable.user_id_card],
             user_dormitory = row[UsersTable.user_dormitory],
-            user_letter = row[UsersTable.user_letter]
+            user_letter = row[UsersTable.user_letter],
+            user_permission = row[UsersTable.user_permission]
         )
 
 

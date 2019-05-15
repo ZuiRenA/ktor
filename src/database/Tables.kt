@@ -24,6 +24,8 @@ open class UsersInfo : Table() {
     val user_dormitory = varchar("user_dormitory", 255)
     //用户录取通知书
     val user_letter = varchar("user_letter", 500)
+    //用户是否是管理员
+    val user_permission = varchar("user_permission", 255)
 }
 
 open class SchoolInfo : Table() {

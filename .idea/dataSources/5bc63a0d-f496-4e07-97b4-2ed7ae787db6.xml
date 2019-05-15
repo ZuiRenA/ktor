@@ -26,7 +26,7 @@
       <DataType>INTEGER(10)|4s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
-      <DefaultExpression>(NEXT VALUE FOR PUBLIC.SYSTEM_SEQUENCE_64F8DE51_4600_4DE4_9CAB_77465E167A30)</DefaultExpression>
+      <DefaultExpression>(NEXT VALUE FOR PUBLIC.SYSTEM_SEQUENCE_2950C61B_5C50_490A_9DCB_B33D203FC6EB)</DefaultExpression>
     </column>
     <column id="11" parent="5" name="DORMITORY_NAME">
       <Position>3</Position>
@@ -126,7 +126,7 @@
       <DataType>INTEGER(10)|4s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
-      <DefaultExpression>(NEXT VALUE FOR PUBLIC.SYSTEM_SEQUENCE_C9456E2B_E12B_446D_B523_DDD8FDD3D43A)</DefaultExpression>
+      <DefaultExpression>(NEXT VALUE FOR PUBLIC.SYSTEM_SEQUENCE_4BA5FD98_D799_4AE5_B643_E094014BF3CA)</DefaultExpression>
     </column>
     <column id="31" parent="7" name="SCHOOL_NAME">
       <Position>2</Position>
@@ -191,7 +191,7 @@
       <DataType>INTEGER(10)|4s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
-      <DefaultExpression>(NEXT VALUE FOR PUBLIC.SYSTEM_SEQUENCE_63602D16_CAE6_4A01_97CE_FAC29E3FC41E)</DefaultExpression>
+      <DefaultExpression>(NEXT VALUE FOR PUBLIC.SYSTEM_SEQUENCE_947DE3B4_05C5_48F5_B9E1_B2EA17354E62)</DefaultExpression>
     </column>
     <column id="44" parent="8" name="NAME">
       <Position>2</Position>
@@ -243,21 +243,26 @@
       <DataType>VARCHAR(500)|12s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="54" parent="8" name="PRIMARY_KEY_4">
+    <column id="54" parent="8" name="USER_PERMISSION">
+      <Position>12</Position>
+      <DataType>VARCHAR(255)|12s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="55" parent="8" name="PRIMARY_KEY_4">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ID</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="55" parent="8" name="USERS_PHONE_NUMBER_UNIQUE_INDEX_4">
+    <index id="56" parent="8" name="USERS_PHONE_NUMBER_UNIQUE_INDEX_4">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>PHONE_NUMBER</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="56" parent="8" name="PK_USERS">
+    <key id="57" parent="8" name="PK_USERS">
       <ColNames>ID</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="57" parent="8" name="USERS_PHONE_NUMBER_UNIQUE_INDEX_4">
+    <key id="58" parent="8" name="USERS_PHONE_NUMBER_UNIQUE_INDEX_4">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>PHONE_NUMBER</ColNames>
     </key>

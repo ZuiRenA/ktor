@@ -17,6 +17,7 @@ import io.ktor.routing.get
 import io.ktor.routing.post
 import io.ktor.routing.routing
 import org.apache.http.HttpHost
+import javax.xml.crypto.Data
 
 fun main(args: Array<String>): Unit = io.ktor.server.netty.EngineMain.main(args)
 
@@ -149,6 +150,10 @@ fun Application.module(testing: Boolean = false) {
         post("/select/dormitory") {
             val selectDor = call.receive<SelectDor>()
             call.respond(DatabaseUtil.studentSelectDor(selectDor))
+        }
+
+        get("/userTable") {
+            call.respond(isSuccess(true, DatabaseFactory.selectAll(UsersTable)))
         }
     }
 }
