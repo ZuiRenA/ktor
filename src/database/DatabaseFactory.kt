@@ -143,7 +143,25 @@ object DatabaseFactory : DatabaseHelper {
                 }
             }
             is SchoolInfoTable -> {
-
+                transaction {
+                    try {
+                        val school = model as SchoolInfo
+                        table.update({ table.school_id.eq(where as Int) }) {
+                            it[table.school_name] = school.school_name
+                            it[table.school_introduce] = school.school_introduce
+                            it[table.school_address] = school.school_address
+                            val temp = listOf(table.school_image_0, table.school_image_1, table.school_image_2,
+                                table.school_image_3, table.school_image_4)
+                            school.image_show_list.forEachIndexed { index, s ->
+                                it[temp[index]] = s
+                            }
+                        }
+                        returnContent = isSuccess(true, school)
+                    } catch (e: Exception) {
+                        e.printStackTrace()
+                        returnContent = isSuccess(isSuccess = false, errorReason = "update error")
+                    }
+                }
             }
 
             is SchoolGuideTimeTable -> {

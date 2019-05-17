@@ -42,5 +42,4 @@ object DatabaseOperate{
         return content ?: isSuccess(false)
     }
 
-
 }
