@@ -115,10 +115,6 @@ object DatabaseFactory : DatabaseHelper {
         }
     }
 
-    override suspend fun delete(table: Table, where: Any): isSuccess {
-
-        return isSuccess(true)
-    }
 
     override suspend fun update(table: Table, where: Any?, model: Any?): isSuccess {
         var returnContent = isSuccess(false)
@@ -138,7 +134,6 @@ object DatabaseFactory : DatabaseHelper {
                             it[table.user_id_card] = users.user_id_card ?: ""
                             it[table.user_dormitory] = users.user_dormitory ?: ""
                             it[table.user_letter] = users.user_letter ?: ""
-                            it[table.user_permission] = users.user_permission ?: "false"
                         }
                         returnContent = isSuccess(true, users)
                     } catch (e: Exception) {

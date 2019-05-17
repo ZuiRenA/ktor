@@ -3,6 +3,7 @@ package com.shen
 import com.shen.database.*
 import com.shen.model.*
 import com.shen.network.MessageUtil
+import com.shen.util.DatabaseOperate
 import com.shen.util.DatabaseUtil
 import io.ktor.application.Application
 import io.ktor.application.call
@@ -141,19 +142,28 @@ fun Application.module(testing: Boolean = false) {
             val password = call.receive<Password>()
             call.respond(DatabaseUtil.changePassword(password = password))
         }
-
         get("/dormitory/{id}") {
             val id = call.parameters["id"]
             call.respond(DatabaseUtil.selectDormitory(id?.toInt()))
         }
-
         post("/select/dormitory") {
             val selectDor = call.receive<SelectDor>()
             call.respond(DatabaseUtil.studentSelectDor(selectDor))
         }
-
         get("/userTable") {
             call.respond(isSuccess(true, DatabaseFactory.selectAll(UsersTable)))
+        }
+        get("/delete/user/{phone}") {
+            val phone = call.parameters["phone"]!!
+            call.respond(DatabaseOperate.deleteDatabaseSome(UsersTable, phone.toLong()))
+        }
+        get("/delete/college/{name}") {
+            val name = call.parameters["name"]!!
+            call.respond(DatabaseOperate.deleteDatabaseSome(SchoolGuideTimeTable, name))
+        }
+        get("/delete/dormitory/{id}") {
+            val id = call.parameters["id"]!!
+            call.respond(DatabaseOperate.deleteDatabaseSome(SchoolDormitoryTable, id.toInt()))
         }
     }
 }

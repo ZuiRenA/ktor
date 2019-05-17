@@ -1,3 +1,111 @@
+GET http://127.0.0.1:8080/guideTime/1
+Content-Type: application/json
+
+<> 2019-05-15T062707.200.json
+
+###
+
+GET http://127.0.0.1:8080/guideTime/1
+Content-Type: application/json
+
+###
+
+GET http://127.0.0.1:8080/guideTime/1
+Content-Type: application/json
+
+###
+
+GET http://127.0.0.1:8080/guideTime/1
+Content-Type: application/json
+
+<> 2019-05-15T062245.200.json
+
+###
+
+GET http://127.0.0.1:8080/guideTime/1
+Content-Type: application/json
+
+<> 2019-05-15T060858.200.json
+
+###
+
+GET http://127.0.0.1:8080/schoolInfo/1
+Content-Type: application/json
+
+<> 2019-05-15T060608.200.json
+
+###
+
+POST http://127.0.0.1:8080/schoolInfo/1
+Content-Type: application/json
+
+###
+
+POST http://127.0.0.1:8080/guideTime/1
+Content-Type: application/json
+
+###
+
+POST http://127.0.0.1:8080/guideTime/1
+Content-Type: application/json
+
+###
+
+POST http://{{host}}/guideTime/1
+Content-Type: application/json
+
+###
+
+POST http://127.0.0.1:8080/guideTime/1
+Content-Type: application/json
+
+###
+
+POST http://127.0.0.1:8080/guideTime/1
+Content-Type: application/json
+
+###
+
+POST http://127.0.0.1:8080/guideTime/1
+Content-Type: application/json
+
+###
+
+POST http://127.0.0.1:8080/guideTime/1
+Content-Type: application/json
+
+###
+
+POST http://127.0.0.1:8080/guideTime/1
+Content-Type: application/json
+
+###
+
+POST http://{{host}}/guideTime/1
+Content-Type: application/json
+
+###
+
+POST http://127.0.0.1:8080/guideTime/1
+Content-Type: application/json
+
+###
+
+POST http://127.0.0.1:8080/guideTime/1
+Content-Type: application/json
+
+###
+
+POST http://127.0.0.1:8080/guideTime/1
+Content-Type: application/json
+
+###
+
+POST http://127.0.0.1:8080/guideTime/1
+Content-Type: application/json
+
+###
+
 POST http://127.0.0.1:8080/guideTime/1
 Content-Type: application/json
 
@@ -213,222 +321,6 @@ GET http://127.0.0.1:8080/schoolInfo/1
 Content-Type: application/json
 
 <> 2019-03-20T123835.200.json
-
-###
-
-GET http://127.0.0.1:8080/schoolInfo/1
-Content-Type: application/json
-
-{
-  "id": 1
-}
-
-<> 2019-03-20T123819.200.json
-
-###
-
-GET http://127.0.0.1:8080/schoolInfo/1
-Content-Type: application/json
-
-{
-  "id": 1
-}
-
-<> 2019-03-20T123733.200.json
-
-###
-
-GET http://127.0.0.1:8080/schoolInfo/1
-Content-Type: application/json
-
-{
-  "id": 1
-}
-
-<> 2019-03-20T123653.200.json
-
-###
-
-GET http://127.0.0.1:8080/schoolInfo/1
-Content-Type: application/json
-
-{
-  "id": 1
-}
-
-<> 2019-03-20T123552.200.json
-
-###
-
-GET http://127.0.0.1:8080/schoolInfo/1
-Content-Type: application/json
-
-{
-  "id": 1
-}
-
-###
-
-POST http://127.0.0.1:8080/schoolInfo/{1}
-Content-Type: application/json
-
-{
-  "id": 1
-}
-
-###
-
-POST http://192.168.7.103:8080/schoolInfo
-Content-Type: application/json
-
-{
-  "id": 1
-}
-
-<> 2019-03-19T115900.200.json
-
-###
-
-POST http://192.168.7.103:8080/schoolInfo
-Content-Type: application/json
-
-{
-  "id": 1
-}
-
-<> 2019-03-19T115830.200.json
-
-###
-
-POST http://192.168.7.103:8080/schoolInfo
-Content-Type: application/json
-
-{
-  "id": 1
-}
-
-<> 2019-03-19T115811.200.json
-
-###
-
-POST http://192.168.7.103:8080/schoolInfo
-Content-Type: application/json
-
-{
-  "id": 1
-}
-
-<> 2019-03-19T115656.200.json
-
-###
-
-POST http://192.168.7.103:8080/schoolInfo
-Content-Type: application/json
-
-{
-  "id": 1
-}
-
-<> 2019-03-19T115633.200.json
-
-###
-
-POST http://192.168.7.103:8080/schoolInfo
-Content-Type: application/json
-
-{
-  "id": 1
-}
-
-<> 2019-03-19T115256.200.json
-
-###
-
-POST http://127.0.0.1:8080/schoolInfo
-Content-Type: application/json
-
-{
-  "id": 1
-}
-
-<> 2019-03-19T115105.200.json
-
-###
-
-POST http://127.0.0.1:8080/schoolInfo
-Content-Type: application/json
-
-{
-  "id": 1
-}
-
-<> 2019-03-19T114144.200.json
-
-###
-
-POST http://127.0.0.1:8080/sendMessage
-Content-Type: application/json
-
-{
-  "text": "15676154335"
-}
-
-###
-
-POST http://127.0.0.1:8080/sendMessage
-Content-Type: application/json
-
-{
-  "text": "15676154335"
-}
-
-<> 2019-03-18T105120.200.json
-
-###
-
-POST http://127.0.0.1:8080/sendMessage
-Content-Type: application/json
-
-{
-  "text": "15676154335"
-}
-
-<> 2019-03-18T105010.200.json
-
-###
-
-POST http://127.0.0.1:8080/sendMessage
-Content-Type: application/json
-
-{
-  "text": "13405665741"
-}
-
-<> 2019-03-18T104811.200.json
-
-###
-
-POST http://127.0.0.1:8080/upload
-Content-Type: application/json
-
-{
-  "user_number": 13405665741,
-  "image_address": "test_address"
-}
-
-<> 2019-03-18T102631.200.json
-
-###
-
-POST http://127.0.0.1:8080/upload
-Content-Type: application/json
-
-{
-  "user_number": 13405665741,
-  "image_address": "test_address"
-}
-
-<> 2019-03-18T102425.200.json
 
 ###
 

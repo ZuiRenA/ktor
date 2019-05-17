@@ -1,4 +1,4 @@
-POST  {{host}}//guideTime/1
+GET  {{host}}//guideTime/1
 Content-Type: application/json
 
 //{
