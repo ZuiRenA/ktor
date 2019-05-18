@@ -96,7 +96,6 @@ object DatabaseFactory : DatabaseHelper {
                         InitSchoolDormitory.schoolDormitory.forEach { schoolDormitory ->
                             table.insert {
                                 it[school_id] = schoolDormitory.school_id
-                                it[dormitory_id] = schoolDormitory.dormitory_id
                                 it[dormitory_name] = schoolDormitory.dormitory_name
                                 val initList = listOf(
                                     dormitory_student_0, dormitory_student_1,
@@ -268,15 +267,17 @@ object DatabaseFactory : DatabaseHelper {
                         val schoolDormitory = model as SchoolDormitory
                         table.insert {
                             it[school_id] = schoolDormitory.school_id
-                            it[dormitory_id] = schoolDormitory.dormitory_id
                             it[dormitory_name] = schoolDormitory.dormitory_name
                             val list = listOf(
                                 dormitory_student_0, dormitory_student_1,
                                 dormitory_student_2, dormitory_student_3
                             )
+
                             schoolDormitory.dormitory_student_list.forEachIndexed { index, content ->
                                 it[list[index]] = content
                             }
+
+                            insertCode = isSuccess(true)
                         }
                     } catch (e: Exception) {
                         e.printStackTrace()

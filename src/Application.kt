@@ -2,6 +2,7 @@ package com.shen
 
 import com.shen.database.*
 import com.shen.model.*
+import com.shen.model.SchoolDormitory
 import com.shen.model.SchoolInfo
 import com.shen.network.MessageUtil
 import com.shen.util.DatabaseOperate
@@ -174,6 +175,15 @@ fun Application.module(testing: Boolean = false) {
         post("/update/school") {
             val school = call.receive<SchoolInfo>()
             call.respond(DatabaseFactory.update(SchoolInfoTable, school.school_id, school))
+        }
+
+        post("insert/dormitory") {
+            val dormitory = call.receive<SchoolDormitory>()
+            call.respond(DatabaseFactory.insert(SchoolDormitoryTable, dormitory))
+        }
+        post("/update/dormitory") {
+            val dormitory = call.receive<SchoolDormitory>()
+            call.respond(DatabaseOperate.updateSchoolDor(dormitory))
         }
     }
 }
